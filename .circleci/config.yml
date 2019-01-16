@@ -32,7 +32,7 @@ jobs:
           name: Run coverage
           command: npm run coveralls
       - codecov/upload:
-          file: {{ coverage_report_filepath }}
+          file: coverage/coverage-final.json
 
 workflows:
   version: 2
