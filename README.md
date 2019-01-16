@@ -1,5 +1,7 @@
 # React Boilerplate: Apollo & Typescript
 
+<div align="center"><strong>⚠️ WIP: This fork is currently a work in progress. Features may be missing or incomplete.</strong></div>
+
 <br />
 
 <div align="center"><strong>Start your next react project in seconds</strong></div>
@@ -74,13 +76,9 @@
 ### Notable changes from `react-boilerplate`
 
 * Merge in work by @Mensae to replace [enzyme](https://github.com/airbnb/enzyme) with [react-testing-library](https://github.com/kentcdodds/react-testing-library)
-
-* Add [commit linting](https://github.com/marionebl/commitlint) through [husky](https://github.com/typicode/husky) to enforce consistent commit message style
-
 * Merge in work by @julianben to replace [Immutable.js](https://facebook.github.io/immutable-js/) with [Immer](https://github.com/mweststrate/immer)
-
+* Add [commit linting](https://github.com/marionebl/commitlint) through [husky](https://github.com/typicode/husky) to enforce consistent commit message style
 * Prefer [yarn](https://yarnpkg.com) by providing a `yarn.lock` file
-
 * Add configuration for CircleCI
 
 ---
