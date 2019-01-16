@@ -34,7 +34,15 @@
   </a>
   <!-- Test Coverage -->
   <a href="https://coveralls.io/r/bwyap/react-boilerplate-typescript-apollo">
-    <img src="https://coveralls.io/repos/github/bwyap/react-boilerplate-typescript-apollo/badge.svg" alt="Test Coverage" />
+    <img src="https://coveralls.io/repos/github/bwyap/react-boilerplate-typescript-apollo/badge.svg" alt="Test Coverage (Coveralls)" />
+  </a>
+  <!-- Test Coverage -->
+  <a href="https://codecov.io/gh/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://codecov.io/gh/bwyap/react-boilerplate-typescript-apollo/branch/master/graph/badge.svg" alt="Test Coverage (Codecov)"/>
+  </a>
+  <!-- Known Vulnerabilities -->
+  <a href="https://snyk.io/test/github/bwyap/react-boilerplate-typescript-apollo?targetFile=package.json">
+    <img src="https://snyk.io/test/github/bwyap/react-boilerplate-typescript-apollo/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" style="max-width:100%;" />
   </a>
 </div>
 
