@@ -19,11 +19,9 @@ init:
 
 # Install scripts--runs after repo cloning
 install:
-  # Install chrome
-  - choco install -y googlechrome --ignore-checksums
   # Install the latest stable version of Node
   - ps: Install-Product node $env:nodejs_version
-  - npm ci
+  - yarn
 
 # Disable automatic builds
 build: off
@@ -34,12 +32,12 @@ test_script:
   - node --version
   - node ./internals/scripts/generate-templates-for-linting
   # run tests and run build
-  - npm run test
-  - npm run build
+  - yarn test
+  - yarn build
 
 # Cache node_modules for faster builds
 cache:
-  - node_modules -> package.json
+  - "%LOCALAPPDATA%\\Yarn"
 
 # remove, as appveyor doesn't support secure variables on pr builds
 # so `COVERALLS_REPO_TOKEN` cannot be set, without hard-coding in this file
