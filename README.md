@@ -64,7 +64,6 @@
   <a href="https://spectrum.chat/react-boilerplate">
     <img alt="Chat with us on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
   </a>
-
 </div>
 
 ---
