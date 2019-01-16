@@ -1,11 +1,48 @@
-<img src="https://raw.githubusercontent.com/react-boilerplate/react-boilerplate-brand/master/assets/banner-metal-optimized.jpg" alt="react boilerplate banner" align="center" />
+# React Boilerplate: Apollo & Typescript
+
+<div align="center"><strong>⚠️ WIP: This fork is currently a work in progress. Features may be missing or incomplete.</strong></div>
 
 <br />
 
 <div align="center"><strong>Start your next react project in seconds</strong></div>
 <div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>
 
+<div align="center">
+  <sub>Created by <a href="https://twitter.com/mxstbr">Max Stoiber</a>, forked and maintained by <a href="https://github.com/bwyap">Ben Yap</a>.</sub>
+</div>
+
+---
+
+### react-boilerplate-typescript-apollo
+
+<div align="center">
+  <!-- Dependency Status -->
+  <a href="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo.svg" alt="Dependency Status" />
+  </a>
+  <!-- devDependency Status -->
+  <a href="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo#info=devDependencies">
+    <img src="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo/dev-status.svg" alt="devDependency Status" />
+  </a>
+  <!-- Build Status - Appveyor -->
+  <a href="https://ci.appveyor.com/project/bwyap/react-boilerplate-typescript-apollo">
+    <img src="" alt="Build Status (Appveyor)" />
+  </a>
+  <!-- Build Status - CircleCI -->
+  <a href="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo.svg?style=svg" alt="Build Status (Circle CI)" />
+  </a>
+  <!-- Test Coverage -->
+  <a href="https://coveralls.io/r/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://coveralls.io/repos/github/bwyap/react-boilerplate-typescript-apollo/badge.svg" alt="Test Coverage" />
+  </a>
+</div>
+
 <br />
+
+---
+
+### react-boilerplate
 
 <div align="center">
   <!-- Dependency Status -->
@@ -24,30 +61,27 @@
   <a href="https://coveralls.io/r/react-boilerplate/react-boilerplate">
     <img src="https://coveralls.io/repos/github/react-boilerplate/react-boilerplate/badge.svg" alt="Test Coverage" />
   </a>
-</div>
-<div align="center">
-    <!-- Backers -->
-  <a href="#backers">
-    <img src="https://opencollective.com/react-boilerplate/backers/badge.svg" alt="Backers" />
+  <a href="https://spectrum.chat/react-boilerplate">
+    <img alt="Chat with us on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
   </a>
-      <!-- Sponsors -->
-  <a href="#sponsors">
-    <img src="https://opencollective.com/react-boilerplate/sponsors/badge.svg" alt="Sponsors" />
-  </a>
-  <a href="http://thinkmill.com.au/?utm_source=github&utm_medium=badge&utm_campaign=react-boilerplate">
-    <img alt="Supported by Thinkmill" src="https://thinkmill.github.io/badge/heart.svg" />
-  </a>
-  <!-- Gitter -->
-  <a href="https://gitter.im/mxstbr/react-boilerplate">
-    <img src="https://camo.githubusercontent.com/54dc79dc7da6b76b17bc8013342da9b4266d993c/68747470733a2f2f6261646765732e6769747465722e696d2f6d78737462722f72656163742d626f696c6572706c6174652e737667" alt="Gitter Chat" />
-  </a>
+
 </div>
 
-<br />
+---
 
-<div align="center">
-  <sub>Created by <a href="https://twitter.com/mxstbr">Max Stoiber</a> and maintained with ❤️ by an amazing <a href="https://github.com/orgs/react-boilerplate/people">team of developers</a>.</sub>
-</div>
+## React boilerplate: Typescript and Apollo
+
+*An opinionated fork of react-boilerplate with Apollo added, written in Typescript.*
+
+### Notable changes from `react-boilerplate`
+
+* Merge in work by @Mensae to replace [enzyme](https://github.com/airbnb/enzyme) with [react-testing-library](https://github.com/kentcdodds/react-testing-library)
+* Merge in work by @julianben to replace [Immutable.js](https://facebook.github.io/immutable-js/) with [Immer](https://github.com/mweststrate/immer)
+* Add [commit linting](https://github.com/marionebl/commitlint) through [husky](https://github.com/typicode/husky) to enforce consistent commit message style
+* Prefer [yarn](https://yarnpkg.com) by providing a `yarn.lock` file
+* Add configuration for CircleCI
+
+---
 
 ## Features
 
@@ -124,33 +158,9 @@ Now you're ready to rumble!
 
 ## Supporters
 
-This project would not be possible without the support by these amazing folks. [**Become a sponsor**](https://opencollective.com/react-boilerplate) to get your company in front of thousands of engaged react developers and help us out!
-
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/0/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/1/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/2/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/3/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/4/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/5/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/6/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/7/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/9/avatar.svg"></a>
-
----
-
-<a href="https://opencollective.com/react-boilerplate/backer/0/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/0/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/1/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/1/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/2/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/2/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/3/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/3/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/4/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/4/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/5/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/5/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/6/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/6/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/7/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/7/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/8/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/9/avatar.svg"></a>
+Please see the original repository for supporters: [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate).
 
 ## License
 
-This project is licensed under the MIT license, Copyright (c) 2018 Maximilian
-Stoiber. For more information see `LICENSE.md`.
+This project is licensed under the MIT license, Copyright (c) 2019 Ben Yap.
+For more information see `LICENSE.md`.
