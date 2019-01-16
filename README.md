@@ -26,7 +26,7 @@
   </a>
   <!-- Build Status - Appveyor -->
   <a href="https://ci.appveyor.com/project/bwyap/react-boilerplate-typescript-apollo">
-    <img src="" alt="Build Status (Appveyor)" />
+    <img src="https://ci.appveyor.com/api/projects/status/bx1ukbj359gbeshl?svg=true" alt="Build Status (Appveyor)" />
   </a>
   <!-- Build Status - CircleCI -->
   <a href="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo">
@@ -34,7 +34,15 @@
   </a>
   <!-- Test Coverage -->
   <a href="https://coveralls.io/r/bwyap/react-boilerplate-typescript-apollo">
-    <img src="https://coveralls.io/repos/github/bwyap/react-boilerplate-typescript-apollo/badge.svg" alt="Test Coverage" />
+    <img src="https://coveralls.io/repos/github/bwyap/react-boilerplate-typescript-apollo/badge.svg" alt="Test Coverage (Coveralls)" />
+  </a>
+  <!-- Test Coverage -->
+  <a href="https://codecov.io/gh/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://codecov.io/gh/bwyap/react-boilerplate-typescript-apollo/branch/master/graph/badge.svg" alt="Test Coverage (Codecov)"/>
+  </a>
+  <!-- Known Vulnerabilities -->
+  <a href="https://snyk.io/test/github/bwyap/react-boilerplate-typescript-apollo?targetFile=package.json">
+    <img src="https://snyk.io/test/github/bwyap/react-boilerplate-typescript-apollo/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" style="max-width:100%;" />
   </a>
 </div>
 
@@ -60,9 +68,6 @@
   <!-- Test Coverage -->
   <a href="https://coveralls.io/r/react-boilerplate/react-boilerplate">
     <img src="https://coveralls.io/repos/github/react-boilerplate/react-boilerplate/badge.svg" alt="Test Coverage" />
-  </a>
-  <a href="https://spectrum.chat/react-boilerplate">
-    <img alt="Chat with us on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
   </a>
 </div>
 
