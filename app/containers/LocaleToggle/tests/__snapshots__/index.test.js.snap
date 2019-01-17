@@ -17,6 +17,11 @@ exports[`<LocaleToggle /> should match the snapshot 1`] = `
     >
       de
     </option>
+    <option
+      value="fr"
+    >
+      fr
+    </option>
   </select>
 </div>
 `;
