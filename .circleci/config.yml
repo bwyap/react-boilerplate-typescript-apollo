@@ -26,16 +26,21 @@ jobs:
           name: Generate test templates
           command: node ./internals/scripts/generate-templates-for-linting 
       - run:
+          name: Set up test-results folder
+          command: mkdir -p test-results/jest
+      - run:
           name: Run tests
-          command: npm test -- --maxWorkers=4
+          command: yarn test --maxWorkers=4 --json --outputFile=test-results/jest/results.json
+      - store_test_results:
+          path: test-results
       - run:
           name: Run coverage
-          command: npm run coveralls
+          command: yarn coveralls
       - codecov/upload:
           file: coverage/coverage-final.json
       - run:
           name: Run build
-          command: npm run build
+          command: yarn build
 workflows:
   version: 2
   test:
