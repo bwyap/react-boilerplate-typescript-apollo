@@ -62,15 +62,18 @@
 
 ---
 
-*An opinionated fork of react-boilerplate with Apollo added, written in Typescript.*
+*An opinionated fork of react-boilerplate made for the GraphQL stack, written in Typescript.*
 
 This fork was created to extend the great work done by the guys at react-boilerplate to provide
 an opinionated set up with one of the most popular stacks out there: [the GraphQL stack](https://www.apollographql.com/why-graphql).
 
-#### Notable changes from `react-boilerplate`
+#### New in `react-boilerplate-typescript-apollo`
 
-- [x] Merge in work by @Mensae to replace [enzyme](https://github.com/airbnb/enzyme) with [react-testing-library](https://github.com/kentcdodds/react-testing-library)
-- [x] Merge in work by @julianben to replace [Immutable.js](https://facebook.github.io/immutable-js/) with [Immer](https://github.com/mweststrate/immer)
+- [ ] Add React Storybook integration (?)
+- [ ] Add Apollo client integration
+- [ ] Add Typescript integration
+- [x] Replace [enzyme](https://github.com/airbnb/enzyme) with [react-testing-library](https://github.com/kentcdodds/react-testing-library) (by @Mensae)
+- [x] Replace [Immutable.js](https://facebook.github.io/immutable-js/) with [Immer](https://github.com/mweststrate/immer) (by @julianben)
 - [x] Add [commit linting](https://github.com/marionebl/commitlint) through [husky](https://github.com/typicode/husky) to enforce consistent commit message style
 - [x] Prefer [yarn](https://yarnpkg.com) by providing a `yarn.lock` file
 - [x] Add configuration for CircleCI
@@ -184,5 +187,5 @@ Please see the original repository for supporters: [react-boilerplate](https://g
 
 ## License
 
-This project is licensed under the MIT license, Copyright (c) 2019 Ben Yap.
+This project is licensed under the MIT license, Copyright (c) Ben Yap.
 For more information see [`LICENSE.md`](https://github.com/bwyap/react-boilerplate-typescript-apollo/blob/master/LICENSE.md).
