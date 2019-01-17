@@ -23,6 +23,9 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run:
+          name: Generate test templates
+          command: node ./internals/scripts/generate-templates-for-linting 
+      - run:
           name: Run tests
           command: npm test -- --maxWorkers=4
       - run:
