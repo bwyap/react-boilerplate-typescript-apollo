@@ -39,9 +39,9 @@ test_script:
   # run tests
   - node ./internals/scripts/generate-templates-for-linting
   - yarn test:ci
-  # upload test results to AppVeyor (https://www.appveyor.com/docs/running-tests/#uploading-xml-test-results)
-  - cat test-results/jest/results.xml
-  - cat test-results/jest/results.xml | curl -X POST -H 'Content-type:text/xml' -d @- https://ci.appveyor.com/api/testresults/junit/$APPVEYOR_JOB_ID
+  # upload results to AppVeyor (https://www.appveyor.com/docs/running-tests/#uploading-xml-test-results)
+  $wc = New-Object 'System.Net.WebClient'
+  $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\test-results\jest\results.xml))
   # uncomment the following command if you want to test build
   # - yarn build
 
