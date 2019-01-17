@@ -34,6 +34,10 @@
   <a href="https://codecov.io/gh/bwyap/react-boilerplate-typescript-apollo">
     <img src="https://codecov.io/gh/bwyap/react-boilerplate-typescript-apollo/branch/master/graph/badge.svg" alt="Test coverage (Codecov)" />
   </a>
+  <!-- Tests - Appveyor -->
+  <a href="https://ci.appveyor.com/project/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://img.shields.io/appveyor/tests/bwyap/react-boilerplate-typescript-apollo.svg" alt="Build status (Appveyor)" />
+  </a>
   <!-- Build Status - Travis CI -->
   <a href="https://travis-ci.org/bwyap/react-boilerplate-typescript-apollo">
     <img src="https://travis-ci.org/bwyap/react-boilerplate-typescript-apollo.svg?branch=master" alt="Build status (Travis CI)" />

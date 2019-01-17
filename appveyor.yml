@@ -6,6 +6,10 @@ version: '{build}'
 # Do not build on gh tags
 skip_tags: true
 
+# Immediately finish build once one of the jobs fails
+matrix:
+  fast_finish: true
+
 # Test against these versions of Node.js
 environment:
   matrix:
@@ -30,10 +34,12 @@ build: off
 test_script:
   # Output debugging info
   - node --version
-  - node ./internals/scripts/generate-templates-for-linting
   # run tests and run build
-  - yarn test
+  - node ./internals/scripts/generate-templates-for-linting
+  - yarn test --json --outputFile=results.json
   - yarn build
+  # upload results to AppVeyor
+  - yarn test:upload-appveyor
 
 # Cache node_modules for faster builds
 cache:
