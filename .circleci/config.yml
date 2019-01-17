@@ -27,11 +27,8 @@ jobs:
           name: Generate test templates
           command: node ./internals/scripts/generate-templates-for-linting 
       - run:
-          name: Set up test-results folder
-          command: mkdir -p test-results/jest
-      - run:
           name: Run tests
-          command: yarn test --maxWorkers=4 --json --outputFile=test-results/jest/results.json
+          command: yarn test:ci
       - store_test_results:
           path: test-results
       - store_artifacts:

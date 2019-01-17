@@ -40,11 +40,16 @@
     "pretest": "yarn test:clean && yarn lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:ci": "cross-env NODE_ENV=test jest --coverage --ci --reporters=default --reporters=jest-junit",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "test:updateSnapshot": "cross-env NODE_ENV=test jest --updateSnapshot",
     "test:upload-appveyor": "node ./internals/scripts/upload-tests-appveyor",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prettify": "prettier --write"
+  },
+  "jest-junit": {
+    "outputDirectory": "test-results/jest",
+    "outputName": "results.xml"
   },
   "lint-staged": {
     "*.js": [
@@ -138,6 +143,7 @@
     "imports-loader": "0.8.0",
     "jest-cli": "23.6.0",
     "jest-dom": "2.1.1",
+    "jest-junit": "^6.0.1",
     "jest-styled-components": "6.2.2",
     "lint-staged": "8.0.4",
     "ngrok": "3.1.0",
