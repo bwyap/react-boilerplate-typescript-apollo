@@ -33,6 +33,8 @@ jobs:
           command: yarn test --maxWorkers=4 --json --outputFile=test-results/jest/results.json
       - store_test_results:
           path: test-results
+      - store_artifacts:
+          path: test-results
       - run:
           name: Run coverage
           command: yarn coveralls
