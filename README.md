@@ -71,7 +71,7 @@ an opinionated set up with one of the most popular stacks out there: [the GraphQ
 
 - [x] Merge in work by @Mensae to replace [enzyme](https://github.com/airbnb/enzyme) with [react-testing-library](https://github.com/kentcdodds/react-testing-library)
 - [x] Merge in work by @julianben to replace [Immutable.js](https://facebook.github.io/immutable-js/) with [Immer](https://github.com/mweststrate/immer)
-- [ ] Add [commit linting](https://github.com/marionebl/commitlint) through [husky](https://github.com/typicode/husky) to enforce consistent commit message style
+- [x] Add [commit linting](https://github.com/marionebl/commitlint) through [husky](https://github.com/typicode/husky) to enforce consistent commit message style
 - [x] Prefer [yarn](https://yarnpkg.com) by providing a `yarn.lock` file
 - [x] Add configuration for CircleCI
 
