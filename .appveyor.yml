@@ -40,8 +40,8 @@ test_script:
   - node ./internals/scripts/generate-templates-for-linting
   - yarn test:ci
   # upload results to AppVeyor (https://www.appveyor.com/docs/running-tests/#uploading-xml-test-results)
-  $wc = New-Object 'System.Net.WebClient'
-  $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\test-results\jest\results.xml))
+  - $wc = New-Object 'System.Net.WebClient'
+  - $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\test-results\jest\results.xml))
   # uncomment the following command if you want to test build
   # - yarn build
 
