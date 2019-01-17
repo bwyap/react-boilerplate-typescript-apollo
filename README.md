@@ -2,10 +2,59 @@
 
 <div align="center"><strong>⚠️ WIP: This fork is currently a work in progress. Features may be missing or incomplete.</strong></div>
 
-<br />
+<br/>
 
-<div align="center"><strong>Start your next react project in seconds</strong></div>
-<div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>
+<div align="center">
+  <!-- Dependency status -->
+  <a href="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo.svg" alt="Dependency status" />
+  </a>
+  <!-- devDependency status -->
+  <a href="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo#info=devDependencies">
+    <img src="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo/dev-status.svg" alt="devDependency status" />
+  </a>
+  <!-- Known vulnerabilities -->
+  <a href="https://snyk.io/test/github/bwyap/react-boilerplate-typescript-apollo?targetFile=package.json">
+    <img src="https://snyk.io/test/github/bwyap/react-boilerplate-typescript-apollo/badge.svg?targetFile=package.json" alt="Known vulnerabilities" style="max-width:100%;" />
+  </a>
+  <!-- Code size -->
+  <img src="https://img.shields.io/github/languages/code-size/bwyap/react-boilerplate-typescript-apollo.svg" alt="Code size" />
+  
+  <!-- License -->
+  <a href="https://github.com/bwyap/react-boilerplate-typescript-apollo/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/github/license/bwyap/react-boilerplate-typescript-apollo.svg" alt="License" />
+  </a>
+</div>
+<div align="center">
+  <!-- Test Coverage - Coveralls -->
+  <a href="https://coveralls.io/r/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://coveralls.io/repos/github/bwyap/react-boilerplate-typescript-apollo/badge.svg" alt="Test coverage (Coveralls)" />
+  </a>
+  <!-- Test Coverage - Codecov -->
+  <a href="https://codecov.io/gh/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://codecov.io/gh/bwyap/react-boilerplate-typescript-apollo/branch/master/graph/badge.svg" alt="Test coverage (Codecov)" />
+  </a>
+  <!-- Tests - Appveyor -->
+  <a href="https://ci.appveyor.com/project/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://img.shields.io/appveyor/tests/bwyap/react-boilerplate-typescript-apollo.svg" alt="Build status (Appveyor)" />
+  </a>
+  <!-- Build Status - Travis CI -->
+  <a href="https://travis-ci.org/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://travis-ci.org/bwyap/react-boilerplate-typescript-apollo.svg?branch=master" alt="Build status (Travis CI)" />
+  </a>
+  <!-- Build Status - Appveyor -->
+  <a href="https://ci.appveyor.com/project/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://ci.appveyor.com/api/projects/status/bx1ukbj359gbeshl?svg=true" alt="Build status (Appveyor)" />
+  </a>
+  <!-- Build Status - CircleCI -->
+  <a href="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo">
+    <img src="https://img.shields.io/circleci/project/github/bwyap/react-boilerplate-typescript-apollo.svg?logo=CircleCI" alt="Build status (Circle CI)" />
+  </a>
+  <!-- Deploy Status - Netlify -->
+  <a href="https://app.netlify.com/sites/react-boilerplate-typescript-apollo/deploys">
+    <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://api.netlify.com/api/v1/sites/react-boilerplate-typescript-apollo.netlify.com/deploys&label=deploy&query=$[0].state&colorB=blue" alt="Deploy status (Netlify)" />
+  </a>
+</div>
 
 <div align="center">
   <sub>Created by <a href="https://twitter.com/mxstbr">Max Stoiber</a>, forked and maintained by <a href="https://github.com/bwyap">Ben Yap</a>.</sub>
@@ -13,36 +62,27 @@
 
 ---
 
-### react-boilerplate-typescript-apollo
+*An opinionated fork of react-boilerplate with Apollo added, written in Typescript.*
 
-<div align="center">
-  <!-- Dependency Status -->
-  <a href="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo">
-    <img src="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo.svg" alt="Dependency Status" />
-  </a>
-  <!-- devDependency Status -->
-  <a href="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo#info=devDependencies">
-    <img src="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo/dev-status.svg" alt="devDependency Status" />
-  </a>
-  <!-- Build Status - Appveyor -->
-  <a href="https://ci.appveyor.com/project/bwyap/react-boilerplate-typescript-apollo">
-    <img src="" alt="Build Status (Appveyor)" />
-  </a>
-  <!-- Build Status - CircleCI -->
-  <a href="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo">
-    <img src="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo.svg?style=svg" alt="Build Status (Circle CI)" />
-  </a>
-  <!-- Test Coverage -->
-  <a href="https://coveralls.io/r/bwyap/react-boilerplate-typescript-apollo">
-    <img src="https://coveralls.io/repos/github/bwyap/react-boilerplate-typescript-apollo/badge.svg" alt="Test Coverage" />
-  </a>
-</div>
+This fork was created to extend the great work done by the guys at react-boilerplate to provide
+an opinionated set up with one of the most popular stacks out there: [the GraphQL stack](https://www.apollographql.com/why-graphql).
 
-<br />
+#### Notable changes from `react-boilerplate`
+
+- [x] Merge in work by @Mensae to replace [enzyme](https://github.com/airbnb/enzyme) with [react-testing-library](https://github.com/kentcdodds/react-testing-library)
+- [x] Merge in work by @julianben to replace [Immutable.js](https://facebook.github.io/immutable-js/) with [Immer](https://github.com/mweststrate/immer)
+- [x] Add [commit linting](https://github.com/marionebl/commitlint) through [husky](https://github.com/typicode/husky) to enforce consistent commit message style
+- [x] Prefer [yarn](https://yarnpkg.com) by providing a `yarn.lock` file
+- [x] Add configuration for CircleCI
 
 ---
 
-### react-boilerplate
+### Forked from [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
+
+<div align="center"><strong>Start your next react project in seconds</strong></div>
+<div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>
+
+<br/>
 
 <div align="center">
   <!-- Dependency Status -->
@@ -61,24 +101,7 @@
   <a href="https://coveralls.io/r/react-boilerplate/react-boilerplate">
     <img src="https://coveralls.io/repos/github/react-boilerplate/react-boilerplate/badge.svg" alt="Test Coverage" />
   </a>
-  <a href="https://spectrum.chat/react-boilerplate">
-    <img alt="Chat with us on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
-  </a>
 </div>
-
----
-
-## React boilerplate: Typescript and Apollo
-
-*An opinionated fork of react-boilerplate with Apollo added, written in Typescript.*
-
-### Notable changes from `react-boilerplate`
-
-* Merge in work by @Mensae to replace [enzyme](https://github.com/airbnb/enzyme) with [react-testing-library](https://github.com/kentcdodds/react-testing-library)
-* Merge in work by @julianben to replace [Immutable.js](https://facebook.github.io/immutable-js/) with [Immer](https://github.com/mweststrate/immer)
-* Add [commit linting](https://github.com/marionebl/commitlint) through [husky](https://github.com/typicode/husky) to enforce consistent commit message style
-* Prefer [yarn](https://yarnpkg.com) by providing a `yarn.lock` file
-* Add configuration for CircleCI
 
 ---
 
@@ -124,7 +147,7 @@ But wait... there's more!
 - _The fastest fonts:_ Say goodbye to vacant text.
 - _Stay fast_: Profile your app's performance from the comfort of your command
   line!
-- _Catch problems:_ AppVeyor and TravisCI setups included by default, so your
+- _Catch problems:_ CircleCI, AppVeyor and TravisCI setups included by default, so your
   tests get run automatically on Windows and Unix.
 
 There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on how to structure your React.js apps with scalability in mind. It provides rationale for the majority of boilerplate's design decisions.
@@ -134,7 +157,7 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 ## Quick start
 
 1.  Make sure that you have Node.js v8.10 and npm v5 or above installed.
-2.  Clone this repo using `git clone --depth=1 https://github.com/react-boilerplate/react-boilerplate.git <YOUR_PROJECT_NAME>`
+2.  Clone this repo using `git clone --depth=1 https://github.com/bwyap/react-boilerplate-typescript-apollo.git <YOUR_PROJECT_NAME>`
 3.  Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`.<br />
 4.  Run `npm run setup` in order to install dependencies and clean the git repo.<br />
     _At this point you can run `npm start` to see the example app at `http://localhost:3000`._
@@ -162,4 +185,4 @@ Please see the original repository for supporters: [react-boilerplate](https://g
 ## License
 
 This project is licensed under the MIT license, Copyright (c) 2019 Ben Yap.
-For more information see `LICENSE.md`.
+For more information see [`LICENSE.md`](https://github.com/bwyap/react-boilerplate-typescript-apollo/blob/master/LICENSE.md).
