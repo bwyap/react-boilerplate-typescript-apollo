@@ -1,11 +1,10 @@
 import React from 'react';
-import { cleanup, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 
 import ListItemTitle from '../ListItemTitle';
 
 describe('<ListItemTitle />', () => {
-  afterEach(cleanup);
-
   it('should render an <p> tag', () => {
     const {
       container: { firstChild },

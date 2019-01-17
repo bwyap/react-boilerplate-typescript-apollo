@@ -1,12 +1,11 @@
 import React from 'react';
-import { cleanup, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 import 'jest-dom/extend-expect';
 
 import ListItem from '../index';
 
 describe('<ListItem />', () => {
-  afterEach(cleanup);
-
   it('should have a class', () => {
     const { container } = render(<ListItem className="test" />);
     expect(container.querySelector('li').hasAttribute('class')).toBe(true);

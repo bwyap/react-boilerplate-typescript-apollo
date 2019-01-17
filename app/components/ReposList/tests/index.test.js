@@ -2,14 +2,13 @@ import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
-import { cleanup, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 
 import ReposList from '../index';
 import configureStore from '../../../configureStore';
 
 describe('<ReposList />', () => {
-  afterEach(cleanup);
-
   it('should render the loading indicator when its loading', () => {
     const { container } = render(<ReposList loading />);
     expect(container.firstChild).toMatchSnapshot();

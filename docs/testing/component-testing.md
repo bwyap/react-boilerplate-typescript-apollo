@@ -99,7 +99,8 @@ This is our test setup:
 
 ```javascript
 import React from 'react';
-import { render, fireEvent, cleanup } from 'react-testing-library';
+import { render, fireEvent } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 import Button from '../Button';
 
 describe('<Button />', () => {
@@ -150,13 +151,11 @@ it('handles clicks', () => {
 });
 ```
 
-Finally we need to cleanup after ourselves. For this react-testing-library provides us with... well... `cleanup`!
-We will make use of the `afterEach` method, provided by Jest, to unmount and cleanup the DOM after each finished test.
+We used to have to to cleanup after ourselves using the `cleanup` method after each test.
+But now we no longer have to! We can just import `react-testing-library/cleanup-after-each` which is automatically added in our templates.
 
 ```javascript
-describe('<Button />', () => {
-  afterEach(cleanup);
-});
+import 'react-testing-library/cleanup-after-each';
 ``` 
 
 > Failing to call cleanup when you've called render could result in a memory leak and tests which are not "idempotent"
@@ -166,12 +165,11 @@ Our finished test file looks like this:
 
 ```javascript
 import React from 'react';
-import { render, fireEvent, cleanup } from 'react-testing-library';
+import { render, fireEvent } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 import Button from '../Button';
 
 describe('<Button />', () => {
-  afterEach(cleanup);
-
   it('renders and matches the snapshot', () => {
     const text = 'Click me!';
     const { container } = render(<Button>{text}</Button>);

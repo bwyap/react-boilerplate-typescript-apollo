@@ -1,5 +1,6 @@
 import React from 'react';
-import { cleanup, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 import { FormattedMessage, defineMessages } from 'react-intl';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
@@ -18,8 +19,6 @@ const messages = defineMessages({
 });
 
 describe('<LanguageProvider />', () => {
-  afterEach(cleanup);
-
   it('should render its children', () => {
     const children = <h1>Test</h1>;
     const { container } = render(
@@ -37,8 +36,6 @@ describe('<ConnectedLanguageProvider />', () => {
   beforeAll(() => {
     store = configureStore({}, browserHistory);
   });
-
-  afterEach(cleanup);
 
   it('should render the default language messages', () => {
     const { queryByText } = render(

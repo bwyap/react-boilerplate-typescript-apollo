@@ -1,11 +1,10 @@
 import React from 'react';
-import { cleanup, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 
 import Ul from '../Ul';
 
 describe('<Ul />', () => {
-  afterEach(cleanup);
-
   it('should render an <ul> tag', () => {
     const { container } = render(<Ul />);
     const element = container.firstElementChild;

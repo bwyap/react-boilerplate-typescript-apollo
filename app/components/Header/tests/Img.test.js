@@ -1,13 +1,12 @@
 import React from 'react';
-import { cleanup, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import Img from '../Img';
 
 describe('<Img />', () => {
-  afterEach(cleanup);
-
   it('should match the snapshot', () => {
     const renderedComponent = renderer
       .create(<Img src="http://example.com/test.jpg" alt="test" />)

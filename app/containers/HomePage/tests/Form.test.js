@@ -1,11 +1,10 @@
 import React from 'react';
-import { cleanup, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 
 import Form from '../Form';
 
 describe('<Form />', () => {
-  afterEach(cleanup);
-
   it('should render an <form> tag', () => {
     const {
       container: { firstChild },

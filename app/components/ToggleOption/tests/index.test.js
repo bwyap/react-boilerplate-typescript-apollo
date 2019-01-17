@@ -1,12 +1,11 @@
 import React from 'react';
-import { cleanup, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 import { IntlProvider, defineMessages } from 'react-intl';
 
 import ToggleOption from '../index';
 
 describe('<ToggleOption />', () => {
-  afterEach(cleanup);
-
   it('should render default language messages', () => {
     const defaultEnMessage = 'someContent';
     const message = defineMessages({

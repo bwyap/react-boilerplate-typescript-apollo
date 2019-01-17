@@ -1,11 +1,10 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
+import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
 
 import A from '../A';
 
 describe('<A />', () => {
-  afterEach(cleanup);
-
   it('should render an <a> tag', () => {
     const { container } = render(<A />);
     expect(container.querySelector('a')).not.toBeNull();
