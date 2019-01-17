@@ -29,14 +29,13 @@ jobs:
           name: Run tests
           command: npm test -- --maxWorkers=4
       - run:
-          name: Run build
-          command: npm run build
-      - run:
           name: Run coverage
           command: npm run coveralls
       - codecov/upload:
           file: coverage/coverage-final.json
-
+      - run:
+          name: Run build
+          command: npm run build
 workflows:
   version: 2
   test:
