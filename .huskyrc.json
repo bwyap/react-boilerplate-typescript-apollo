@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "pre-push": "npm run lint",
+    "pre-push": "yarn lint",
     "commit-msg": "./node_modules/.bin/commitlint -E HUSKY_GIT_PARAMS",
     "commit": "commit"
   }
