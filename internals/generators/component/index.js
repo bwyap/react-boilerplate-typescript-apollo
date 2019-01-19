@@ -51,40 +51,49 @@ module.exports = {
     },
   ],
   actions: data => {
-    // Generate index.js and index.test.js
+    // Generate index.tsx, types.d.ts and index.spec.tsx
     let componentTemplate;
+    let typeTemplate
 
     switch (data.type) {
       case 'Stateless Function': {
-        componentTemplate = './component/stateless.js.hbs';
+        componentTemplate = './component/stateless.tsx.hbs';
+        typeTemplate = './component/stateless.types.d.ts.hbs';
         break;
       }
       default: {
-        componentTemplate = './component/class.js.hbs';
+        componentTemplate = './component/class.tsx.hbs';
+        typeTemplate = './component/class.types.d.ts.hbs';
       }
     }
 
     const actions = [
       {
         type: 'add',
-        path: '../../app/components/{{properCase name}}/index.js',
+        path: '../../app/components/{{properCase name}}/index.tsx',
         templateFile: componentTemplate,
         abortOnFail: true,
       },
       {
         type: 'add',
-        path: '../../app/components/{{properCase name}}/tests/index.test.js',
-        templateFile: './component/test.js.hbs',
+        path: '../../app/components/{{properCase name}}/types.d.ts',
+        templateFile: typeTemplate,
         abortOnFail: true,
       },
+      {
+        type: 'add',
+        path: '../../app/components/{{properCase name}}/tests/index.spec.tsx',
+        templateFile: './component/test.tsx.hbs',
+        abortOnFail: true,
+      }
     ];
 
     // If they want a i18n messages file
     if (data.wantMessages) {
       actions.push({
         type: 'add',
-        path: '../../app/components/{{properCase name}}/messages.js',
-        templateFile: './component/messages.js.hbs',
+        path: '../../app/components/{{properCase name}}/messages.ts',
+        templateFile: './component/messages.ts.hbs',
         abortOnFail: true,
       });
     }
@@ -93,8 +102,8 @@ module.exports = {
     if (data.wantLoadable) {
       actions.push({
         type: 'add',
-        path: '../../app/components/{{properCase name}}/Loadable.js',
-        templateFile: './component/loadable.js.hbs',
+        path: '../../app/components/{{properCase name}}/Loadable.ts',
+        templateFile: './component/loadable.ts.hbs',
         abortOnFail: true,
       });
     }

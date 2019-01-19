@@ -17,11 +17,11 @@ import * as FontFaceObserver from 'fontfaceobserver';
 import history from './utils/history';
 import 'sanitize.css/sanitize.css';
 
-// // Import root app
-// import App from './containers/App';
+// Import root app
+import App from './containers/App';
 
 // // Import Language Provider
-// import LanguageProvider from './containers/LanguageProvider';
+import LanguageProvider from './containers/LanguageProvider';
 
 // // Load the favicon and the .htaccess file
 import '!file-loader?name=[name].[ext]!./images/favicon.ico';
@@ -49,33 +49,25 @@ const MOUNT_NODE = document.getElementById('app');
 const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <div>Hello World!</div>
-      </ConnectedRouter>
+      <LanguageProvider messages={messages}>
+        <ConnectedRouter history={history}>
+          <App />
+        </ConnectedRouter>
+      </LanguageProvider>
     </Provider>,
-    //   <Provider store={store}>
-    //   <LanguageProvider messages={messages}>
-    //     <ConnectedRouter history={history}>
-    //       <App />
-    //     </ConnectedRouter>
-    //   </LanguageProvider>
-    // </Provider>,
     MOUNT_NODE,
   );
 };
 
-// TODO: remove me
-render(translationMessages);
-
-// if ((module as any).hot) {
-//   // Hot reloadable React components and translation json files
-//   // modules.hot.accept does not accept dynamic dependencies,
-//   // have to be constants at compile-time
-//   (module as any).hot.accept(['./i18n', './containers/App'], () => {
-//     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-//     render(translationMessages);
-//   });
-// }
+if ((module as any).hot) {
+  // Hot reloadable React components and translation json files
+  // modules.hot.accept does not accept dynamic dependencies,
+  // have to be constants at compile-time
+  (module as any).hot.accept(['./i18n', './containers/App'], () => {
+    ReactDOM.unmountComponentAtNode(MOUNT_NODE);
+    render(translationMessages);
+  });
+}
 
 // Chunked polyfill for browsers without Intl support
 if (!(window as any).Intl) {

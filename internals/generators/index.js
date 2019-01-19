@@ -33,7 +33,7 @@ module.exports = plop => {
       '/../../app/',
       config.path,
       plop.getHelper('properCase')(answers.name),
-      '**.js',
+      '**.{ts,tsx}',
     )}`;
     exec(`npm run prettify -- "${folderPath}"`);
     return folderPath;
