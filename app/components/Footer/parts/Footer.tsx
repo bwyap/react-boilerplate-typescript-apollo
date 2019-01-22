@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import A from '../../components/A';
-import LocaleToggle from '../../containers/LocaleToggle';
+import A from '../../../components/A';
+import LocaleToggle from '../../../containers/LocaleToggle';
 import Wrapper from './Wrapper';
-import messages from './messages';
-import { FooterComponentFn } from './types';
+import messages from '../messages';
+import { FooterComponentFn } from '../types';
 
 const Footer: FooterComponentFn = () => (
   <Wrapper>

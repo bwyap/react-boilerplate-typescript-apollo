@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import Ul from '../Ul';
+import Ul from '../parts/Ul';
 
 describe('<Ul />', () => {
   it('should render an <ul> tag', () => {

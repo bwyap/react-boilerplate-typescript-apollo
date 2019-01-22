@@ -8,8 +8,8 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
 import Select from './Select';
-import ToggleOption from '../ToggleOption';
-import { ToggleComponentFn } from './types';
+import ToggleOption from '../../ToggleOption';
+import { ToggleComponentFn } from '../types';
 
 const Toggle: ToggleComponentFn = ({
   values = null,

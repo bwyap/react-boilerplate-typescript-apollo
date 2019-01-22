@@ -4,7 +4,7 @@ import 'react-testing-library/cleanup-after-each';
 import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import Img from '../Img';
+import Img from '../parts/Img';
 
 describe('<Img />', () => {
   it('should match the snapshot', () => {

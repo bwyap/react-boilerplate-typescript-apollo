@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import Circle from './Circle';
 import Wrapper from './Wrapper';
-import { LoadingIndicatorComponentFn } from './types';
+import { LoadingIndicatorComponentFn } from '../types';
 
 const LoadingIndicator: LoadingIndicatorComponentFn = () => (
   <Wrapper>

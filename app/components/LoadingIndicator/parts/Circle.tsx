@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-import { CircleComponentFn } from './types';
+import { CircleComponentFn } from '../types';
 
 const circleFadeDelay = keyframes`
   0%,

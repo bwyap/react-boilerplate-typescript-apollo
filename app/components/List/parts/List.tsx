@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 
 import Ul from './Ul';
 import Wrapper from './Wrapper';
-import { ListComponentFn } from './types';
+import { ListComponentFn } from '../types';
 
 const List: ListComponentFn = ({ component, items }) => {
   const ComponentToRender = component;

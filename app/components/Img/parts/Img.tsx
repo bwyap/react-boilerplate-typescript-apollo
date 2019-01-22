@@ -7,7 +7,7 @@
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { ImgComponentFn } from './types';
+import { ImgComponentFn } from '../types';
 
 const Img: ImgComponentFn = ({ className, alt, src }) => {
   return <img className={className} src={src} alt={alt} />;

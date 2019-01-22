@@ -12,7 +12,7 @@ import * as PropTypes from 'prop-types';
 import A from './A';
 import StyledButton from './StyledButton';
 import Wrapper from './Wrapper';
-import { ButtonComponentFn } from './types';
+import { ButtonComponentFn } from '../types';
 
 const Button: ButtonComponentFn = props => {
   // Render an anchor tag

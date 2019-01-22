@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import Select from '../Select';
+import Select from '../parts/Select';
 
 describe('<Select />', () => {
   it('should render an <select> tag', () => {

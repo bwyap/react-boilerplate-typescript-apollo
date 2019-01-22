@@ -3,7 +3,7 @@ import { render } from 'react-testing-library';
 import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import A from '../A';
+import A from '../parts/A';
 
 describe('<A />', () => {
   it('should match the snapshot', () => {

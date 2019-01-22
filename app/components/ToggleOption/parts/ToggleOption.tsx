@@ -7,7 +7,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
-import { ToggleOptionComponentFn } from './types';
+import { ToggleOptionComponentFn } from '../types';
 
 const ToggleOption: ToggleOptionComponentFn = ({
   value,
