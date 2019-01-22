@@ -185,6 +185,15 @@ module.exports = {
         abortOnFail: true,
       });
       
+      if (data.test) {
+        // Back up files that will be modified so we can restore them
+        actions.push({
+          type: 'backup',
+          path: '../../app/typings',
+          file: 'store-injected.d.ts',
+        });
+      }
+
       // Typings
       actions.push({
         type: 'modify',
