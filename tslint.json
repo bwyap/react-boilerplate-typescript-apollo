@@ -50,7 +50,6 @@
     "no-require-imports": false,
     "no-this-assignment": [true, { "allow-destructuring": true }],
     "no-trailing-whitespace": true,
-    "no-unused-variable": [true, "react"],
     "only-arrow-functions": [true, "allow-declarations"],
     "prefer-method-signature": true,
     "type-literal-delimiter": true,

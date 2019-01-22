@@ -72,9 +72,9 @@ export default function hoistNonReactStatics(
     }
 
     const targetStatics =
-      TYPE_STATICS[(targetComponent as any).$$typeof] || REACT_STATICS;
+      TYPE_STATICS[targetComponent.$$typeof] || REACT_STATICS;
     const sourceStatics =
-      TYPE_STATICS[(sourceComponent as any).$$typeof] || REACT_STATICS;
+      TYPE_STATICS[sourceComponent.$$typeof] || REACT_STATICS;
 
     for (const key of keys) {
       if (

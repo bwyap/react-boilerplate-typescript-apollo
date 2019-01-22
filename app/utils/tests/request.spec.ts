@@ -27,11 +27,11 @@ describe('request', () => {
 
     it('should format the response correctly', done => {
       request('/thisurliscorrect')
-        .catch(done)
         .then(json => {
-          expect(json.hello).toBe('world');
+          expect((json as any).hello).toBe('world');
           done();
-        });
+        })
+        .catch(done);
     });
   });
 
@@ -48,11 +48,11 @@ describe('request', () => {
 
     it('should return null on 204 response', done => {
       request('/thisurliscorrect')
-        .catch(done)
         .then(json => {
           expect(json).toBeNull();
           done();
-        });
+        })
+        .catch(done);
     });
   });
 
