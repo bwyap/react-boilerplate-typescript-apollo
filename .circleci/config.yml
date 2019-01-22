@@ -23,7 +23,7 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run:
-          name: Generate test templates
+          name: Generate and test templates
           command: node ./internals/scripts/generate-templates-for-linting
       - run:
           name: Run tests
