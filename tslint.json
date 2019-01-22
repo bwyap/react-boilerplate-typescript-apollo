@@ -69,6 +69,7 @@
     "quotemark": {
       "options": ["single", "jsx-double", "avoid-escape"]
     },
+    "callable-types": false,
 
     "jsx-no-multiline-js": false,
     "jsx-no-lambda": true,

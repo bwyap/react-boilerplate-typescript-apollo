@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import ListItemTitle from '../ListItemTitle';
+import ListItemTitle from '../parts/ListItemTitle';
 
 describe('<ListItemTitle />', () => {
   it('should render an <p> tag', () => {

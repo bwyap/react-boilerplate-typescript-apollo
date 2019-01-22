@@ -1,19 +1,19 @@
 import {
-  selectGlobal,
+  selectApp,
   makeSelectCurrentUser,
   makeSelectLoading,
   makeSelectError,
   makeSelectRepos,
   makeSelectLocation,
-} from '../selectors';
+} from '../store/selectors';
 
 describe('selectGlobal', () => {
   it('should select the global state', () => {
-    const globalState = {};
+    const appState = {};
     const mockedState = {
-      global: globalState,
+      app: appState,
     };
-    expect(selectGlobal(mockedState)).toEqual(globalState);
+    expect(selectApp(mockedState as any)).toEqual(appState);
   });
 });
 
@@ -22,11 +22,11 @@ describe('makeSelectCurrentUser', () => {
   it('should select the current user', () => {
     const username = 'mxstbr';
     const mockedState = {
-      global: {
+      app: {
         currentUser: username,
       },
     };
-    expect(currentUserSelector(mockedState)).toEqual(username);
+    expect(currentUserSelector(mockedState as any)).toEqual(username);
   });
 });
 
@@ -35,11 +35,11 @@ describe('makeSelectLoading', () => {
   it('should select the loading', () => {
     const loading = false;
     const mockedState = {
-      global: {
+      app: {
         loading,
       },
     };
-    expect(loadingSelector(mockedState)).toEqual(loading);
+    expect(loadingSelector(mockedState as any)).toEqual(loading);
   });
 });
 
@@ -48,11 +48,11 @@ describe('makeSelectError', () => {
   it('should select the error', () => {
     const error = 404;
     const mockedState = {
-      global: {
+      app: {
         error,
       },
     };
-    expect(errorSelector(mockedState)).toEqual(error);
+    expect(errorSelector(mockedState as any)).toEqual(error);
   });
 });
 
@@ -61,13 +61,13 @@ describe('makeSelectRepos', () => {
   it('should select the repos', () => {
     const repositories = [];
     const mockedState = {
-      global: {
+      app: {
         userData: {
           repositories,
         },
       },
     };
-    expect(reposSelector(mockedState)).toEqual(repositories);
+    expect(reposSelector(mockedState as any)).toEqual(repositories);
   });
 });
 
@@ -80,6 +80,6 @@ describe('makeSelectLocation', () => {
     const mockedState = {
       router,
     };
-    expect(locationStateSelector(mockedState)).toEqual(router.location);
+    expect(locationStateSelector(mockedState as any)).toEqual(router.location);
   });
 });

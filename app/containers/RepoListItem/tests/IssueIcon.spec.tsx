@@ -4,7 +4,7 @@ import 'react-testing-library/cleanup-after-each';
 import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import IssueIcon from '../IssueIcon';
+import IssueIcon from '../parts/IssueIcon';
 
 describe('<IssueIcon />', () => {
   it('should match the snapshot', () => {
@@ -25,7 +25,8 @@ describe('<IssueIcon />', () => {
   });
 
   it('should adopt any attribute', () => {
-    const { container } = render(<IssueIcon attribute="test" />);
+    const Invalid: any = IssueIcon;
+    const { container } = render(<Invalid attribute="test" />);
     expect((container.firstChild as Element).hasAttribute('attribute')).toBe(
       true,
     );

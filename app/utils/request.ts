@@ -1,4 +1,4 @@
-import { JSONResponse } from '../types';
+import { JSONResponse } from '../typings/generic';
 
 /**
  * Parses the JSON returned by a network request

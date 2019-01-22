@@ -1,7 +1,7 @@
 import { conformsTo, isFunction, isObject } from 'lodash';
 import * as invariant from 'invariant';
 
-import { CheckStoreFn } from './types';
+import { CheckStoreFn } from '../typings/utils';
 
 /**
  * Validate the shape of redux store

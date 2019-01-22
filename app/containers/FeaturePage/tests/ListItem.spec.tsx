@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import ListItem from '../ListItem';
+import ListItem from '../parts/ListItem';
 
 describe('<ListItem />', () => {
   it('should render an <li> tag', () => {

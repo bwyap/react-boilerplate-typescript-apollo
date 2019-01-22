@@ -29,8 +29,9 @@ describe('<Img />', () => {
   });
 
   it('should not adopt an invalid attribute', () => {
+    const Invalid: any = Img;
     const { container } = render(
-      <Img src="http://example.com/test.jpg" attribute="test" alt="test" />,
+      <Invalid src="http://example.com/test.jpg" attribute="test" alt="test" />,
     );
     expect(container.querySelector('img').getAttribute('attribute')).toBeNull();
   });

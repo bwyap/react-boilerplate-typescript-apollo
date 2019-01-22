@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import Form from '../Form';
+import Form from '../parts/Form';
 
 describe('<Form />', () => {
   it('should render an <form> tag', () => {

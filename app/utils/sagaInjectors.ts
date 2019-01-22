@@ -3,14 +3,14 @@ import { isEmpty, isFunction, isString, conformsTo } from 'lodash';
 
 import checkStore from './checkStore';
 import { DAEMON, ONCE_TILL_UNMOUNT, RESTART_ON_REMOUNT } from './constants';
-import { SagaDescriptor, ReduxStore } from '../types';
+import { SagaDescriptor, MyReduxStore } from '../typings/store';
 import {
   InjectSagaFactory,
   InjectSagaFn,
   EjectSagaFactory,
   EjectSagaFn,
   GetSagaInjectorsFn,
-} from './types';
+} from '../typings/utils';
 
 const allowedModes = [RESTART_ON_REMOUNT, DAEMON, ONCE_TILL_UNMOUNT];
 
@@ -32,7 +32,7 @@ const checkDescriptor = (descriptor: SagaDescriptor) => {
 };
 
 const injectSagaFactory: InjectSagaFactory = (
-  store: ReduxStore,
+  store: MyReduxStore,
   isValid: boolean = false,
 ) => {
   const injectSaga: InjectSagaFn = (
@@ -77,7 +77,7 @@ const injectSagaFactory: InjectSagaFactory = (
 };
 
 const ejectSagaFactory: EjectSagaFactory = (
-  store: ReduxStore,
+  store: MyReduxStore,
   isValid: boolean,
 ) => {
   const ejectSaga: EjectSagaFn = key => {
@@ -101,7 +101,7 @@ const ejectSagaFactory: EjectSagaFactory = (
   return ejectSaga;
 };
 
-const getInjectors: GetSagaInjectorsFn = (store: ReduxStore) => {
+const getInjectors: GetSagaInjectorsFn = (store: MyReduxStore) => {
   checkStore(store);
 
   return {

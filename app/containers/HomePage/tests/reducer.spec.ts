@@ -1,9 +1,9 @@
 import produce from 'immer';
 
-import homeReducer from '../reducer';
-import { changeUsername } from '../actions';
+import homeReducer from '../store/reducer';
+import { createChangeUsernameAction } from '../store/actions';
+import { ChangeUsernameActionPayload } from '../store/typings/actions';
 
-/* eslint-disable default-case, no-param-reassign */
 describe('homeReducer', () => {
   let state;
   beforeEach(() => {
@@ -14,15 +14,19 @@ describe('homeReducer', () => {
 
   it('should return the initial state', () => {
     const expectedResult = state;
-    expect(homeReducer(undefined, {})).toEqual(expectedResult);
+    expect(homeReducer(undefined, {} as any)).toEqual(expectedResult);
   });
 
   it('should handle the changeUsername action correctly', () => {
-    const fixture = 'mxstbr';
+    const fixture: ChangeUsernameActionPayload = {
+      username: 'mxstbr',
+    };
     const expectedResult = produce(state, draft => {
-      draft.username = fixture;
+      draft.username = fixture.username;
     });
 
-    expect(homeReducer(state, changeUsername(fixture))).toEqual(expectedResult);
+    expect(homeReducer(state, createChangeUsernameAction(fixture))).toEqual(
+      expectedResult,
+    );
   });
 });

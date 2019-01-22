@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import Input from '../Input';
+import Input from '../parts/Input';
 
 describe('<Input />', () => {
   it('should render an <input> tag', () => {

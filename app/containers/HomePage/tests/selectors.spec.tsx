@@ -1,14 +1,15 @@
-import { selectHome, makeSelectUsername } from '../selectors';
+import { selectHome, makeSelectUsername } from '../store/selectors';
+import { HomePageReducerState } from '../store/typings/reducer';
 
 describe('selectHome', () => {
   it('should select the home state', () => {
-    const homeState = {
-      userData: {},
+    const homeState: HomePageReducerState = {
+      username: '',
     };
     const mockedState = {
       home: homeState,
     };
-    expect(selectHome(mockedState)).toEqual(homeState);
+    expect(selectHome(mockedState as any)).toEqual(homeState);
   });
 });
 
@@ -17,10 +18,8 @@ describe('makeSelectUsername', () => {
   it('should select the username', () => {
     const username = 'mxstbr';
     const mockedState = {
-      home: {
-        username,
-      },
+      home: { username },
     };
-    expect(usernameSelector(mockedState)).toEqual(username);
+    expect(usernameSelector(mockedState as any)).toEqual(username);
   });
 });

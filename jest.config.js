@@ -2,8 +2,7 @@ module.exports = {
   collectCoverageFrom: [
     'app/**/*.{ts,tsx}',
     '!app/**/*.test.{ts,tsx}',
-    // '!app/*/RbGenerated*/*.{js,jsx}',
-    '!app/*/RbGenerated*/*.{ts,tsx}',
+    '!app/*/RbGen*/**/*.{ts,tsx}',
     '!app/app.tsx',
     '!app/global-styles.ts',
     '!app/*/*/Loadable.{ts,tsx}',

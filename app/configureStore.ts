@@ -7,7 +7,11 @@ import { routerMiddleware } from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
 
 import createReducer from './reducers';
-import { ReduxStore } from './types';
+import {
+  MyReduxStore,
+  MyReducerState,
+  MyReducerActions,
+} from './typings/store';
 import { History } from 'history';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -31,12 +35,12 @@ export default function configureStore(
       ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
       : compose;
 
-  // TODO: add type parameters to store
-  const store: ReduxStore = createStore(
-    createReducer(),
-    initialState,
-    composeEnhancers(...enhancers),
-  );
+  const store: MyReduxStore = createStore<
+    MyReducerState,
+    MyReducerActions,
+    MyReduxStore,
+    {}
+  >(createReducer(), initialState, composeEnhancers(...enhancers));
 
   // Extensions
   store.runSaga = sagaMiddleware.run;

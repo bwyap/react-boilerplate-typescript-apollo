@@ -2,8 +2,9 @@ import * as React from 'react';
 
 import Circle from './Circle';
 import Wrapper from './Wrapper';
+import { LoadingIndicatorComponentFn } from './types';
 
-const LoadingIndicator = () => (
+const LoadingIndicator: LoadingIndicatorComponentFn = () => (
   <Wrapper>
     <Circle />
     <Circle rotate={30} delay={-1.1} />

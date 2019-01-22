@@ -3,14 +3,15 @@ import * as PropTypes from 'prop-types';
 
 import Item from './Item';
 import Wrapper from './Wrapper';
+import { ListItemComponentFn } from './types';
 
-const ListItem = props => (
+const ListItem: ListItemComponentFn = ({ item }) => (
   <Wrapper>
-    <Item>{props.item}</Item>
+    <Item>{item}</Item>
   </Wrapper>
 );
 
-(ListItem as any).propTypes = {
+ListItem.propTypes = {
   item: PropTypes.any,
 };
 

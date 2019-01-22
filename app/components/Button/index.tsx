@@ -12,8 +12,9 @@ import * as PropTypes from 'prop-types';
 import A from './A';
 import StyledButton from './StyledButton';
 import Wrapper from './Wrapper';
+import { ButtonComponentFn } from './types';
 
-const Button = props => {
+const Button: ButtonComponentFn = props => {
   // Render an anchor tag
   let button = (
     <A href={props.href} onClick={props.onClick}>
@@ -33,7 +34,7 @@ const Button = props => {
   return <Wrapper>{button}</Wrapper>;
 };
 
-(Button as any).propTypes = {
+Button.propTypes = {
   handleRoute: PropTypes.func,
   href: PropTypes.string,
   onClick: PropTypes.func,

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import CenteredSection from '../CenteredSection';
+import CenteredSection from '../parts/CenteredSection';
 
 describe('<CenteredSection />', () => {
   it('should render an <section> tag', () => {

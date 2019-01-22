@@ -25,7 +25,7 @@ describe('<ReposList />', () => {
 
   it('should render the repositories if loading was successful', () => {
     const store = configureStore(
-      { global: { currentUser: 'mxstbr' } },
+      { app: { currentUser: 'mxstbr' } },
       createBrowserHistory(),
     );
     const repos = [
@@ -51,9 +51,7 @@ describe('<ReposList />', () => {
   });
 
   it('should not render anything if nothing interesting is provided', () => {
-    const { container } = render(
-      <ReposList repos={false} error={false} loading={false} />,
-    );
+    const { container } = render(<ReposList error={false} loading={false} />);
 
     expect(container.firstChild).toBeNull();
   });

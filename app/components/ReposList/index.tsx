@@ -5,8 +5,13 @@ import List from '../../components/List';
 import ListItem from '../../components/ListItem';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import RepoListItem from '../../containers/RepoListItem';
+import { ReposListComponentFn } from './types';
 
-const ReposList = ({ loading = false, error = null, repos = null }) => {
+const ReposList: ReposListComponentFn = ({
+  loading = false,
+  error = null,
+  repos = null,
+}) => {
   if (loading) {
     return <List component={LoadingIndicator} />;
   }
@@ -25,7 +30,7 @@ const ReposList = ({ loading = false, error = null, repos = null }) => {
   return null;
 };
 
-(ReposList as any).propTypes = {
+ReposList.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.any,
   repos: PropTypes.any,

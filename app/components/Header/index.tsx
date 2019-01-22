@@ -7,8 +7,9 @@ import NavBar from './NavBar';
 import HeaderLink from './HeaderLink';
 import * as Banner from './banner.jpg';
 import messages from './messages';
+import { HeaderProps } from './types';
 
-class Header extends React.Component {
+class Header extends React.Component<HeaderProps> {
   public render() {
     return (
       <div>

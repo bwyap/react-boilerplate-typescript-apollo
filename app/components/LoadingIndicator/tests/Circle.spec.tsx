@@ -16,8 +16,9 @@ describe('<Circle />', () => {
   });
 
   it('should not adopt attributes', () => {
+    const Invalid: any = Circle;
     const id = 'test';
-    const { container } = render(<Circle id={id} />);
+    const { container } = render(<Invalid id={id} />);
     expect((container.firstChild as Element).hasAttribute('id')).toBe(false);
   });
 });

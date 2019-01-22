@@ -5,8 +5,9 @@ import A from '../../components/A';
 import LocaleToggle from '../../containers/LocaleToggle';
 import Wrapper from './Wrapper';
 import messages from './messages';
+import { FooterComponentFn } from './types';
 
-const Footer = () => (
+const Footer: FooterComponentFn = () => (
   <Wrapper>
     <section>
       <FormattedMessage {...messages.licenseMessage} />

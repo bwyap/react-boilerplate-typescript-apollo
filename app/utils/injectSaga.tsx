@@ -3,8 +3,8 @@ import * as PropTypes from 'prop-types';
 import hoistNonReactStatics from './hoistNonReactStatics';
 
 import getInjectors from './sagaInjectors';
-import { SagaInjectionHandlers } from '../types';
-import { SagaInjectorFn } from './types';
+import { SagaInjectionHandlers } from '../typings/store';
+import { SagaInjectorFn } from '../typings/utils';
 
 /**
  * Dynamically injects a saga, passes component's props as saga arguments

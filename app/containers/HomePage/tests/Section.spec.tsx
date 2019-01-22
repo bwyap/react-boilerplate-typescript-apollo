@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import Section from '../Section';
+import Section from '../parts/Section';
 
 describe('<Section />', () => {
   it('should render an <section> tag', () => {

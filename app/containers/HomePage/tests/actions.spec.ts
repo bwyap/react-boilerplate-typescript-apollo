@@ -1,17 +1,25 @@
-import { CHANGE_USERNAME } from '../constants';
+import { HomePageActionType } from '../store/constants';
 
-import { changeUsername } from '../actions';
+import { createChangeUsernameAction } from '../store/actions';
+import {
+  ChangeUsernameAction,
+  ChangeUsernameActionPayload,
+} from '../store/typings/actions';
 
 describe('Home Actions', () => {
   describe('changeUsername', () => {
     it('should return the correct type and the passed name', () => {
-      const fixture = 'Max';
-      const expectedResult = {
-        type: CHANGE_USERNAME,
-        name: fixture,
+      const fixture: ChangeUsernameActionPayload = {
+        username: 'Max',
+      };
+      const expectedResult: ChangeUsernameAction = {
+        type: HomePageActionType.CHANGE_USERNAME,
+        payload: {
+          username: 'Max',
+        },
       };
 
-      expect(changeUsername(fixture)).toEqual(expectedResult);
+      expect(createChangeUsernameAction(fixture)).toEqual(expectedResult);
     });
   });
 });

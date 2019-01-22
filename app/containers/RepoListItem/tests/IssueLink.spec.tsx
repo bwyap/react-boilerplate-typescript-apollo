@@ -4,7 +4,7 @@ import 'react-testing-library/cleanup-after-each';
 import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import IssueLink from '../IssueLink';
+import IssueLink from '../parts/IssueLink';
 
 describe('<IssueLink />', () => {
   it('should match the snapshot', () => {

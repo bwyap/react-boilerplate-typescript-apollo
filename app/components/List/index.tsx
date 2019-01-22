@@ -3,14 +3,15 @@ import * as PropTypes from 'prop-types';
 
 import Ul from './Ul';
 import Wrapper from './Wrapper';
+import { ListComponentFn } from './types';
 
-const List = props => {
-  const ComponentToRender = props.component;
-  let content = <div />;
+const List: ListComponentFn = ({ component, items }) => {
+  const ComponentToRender = component;
+  let content: JSX.Element | JSX.Element[] = <div />;
 
   // If we have items, render them
-  if (props.items) {
-    content = props.items.map(item => (
+  if (items) {
+    content = items.map(item => (
       <ComponentToRender key={`item-${item.id}`} item={item} />
     ));
   } else {
@@ -25,7 +26,7 @@ const List = props => {
   );
 };
 
-(List as any).propTypes = {
+List.propTypes = {
   component: PropTypes.func.isRequired,
   items: PropTypes.array,
 };

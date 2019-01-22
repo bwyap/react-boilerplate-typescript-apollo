@@ -4,14 +4,16 @@
 
 import { put, takeLatest } from 'redux-saga/effects';
 
-import { LOAD_REPOS } from '../../../containers/App/constants';
-import { reposLoaded, repoLoadingError } from '../../../containers/App/actions';
+import { AppActionType } from '../../../containers/App/store/constants';
+import {
+  createRepoLoadingErrorAction,
+  createReposLoadedAction,
+} from '../../../containers/App/store/actions';
 
-import githubData, { getRepos } from '../saga';
+import githubData, { getRepos } from '../store/saga';
 
 const username = 'mxstbr';
 
-/* eslint-disable redux-saga/yield-effects */
 describe('getRepos Saga', () => {
   let getReposGenerator;
 
@@ -51,13 +53,26 @@ describe('getRepos Saga', () => {
       },
     ];
     const putDescriptor = getReposGenerator.next(response).value;
-    expect(putDescriptor).toEqual(put(reposLoaded(response, username)));
+    expect(putDescriptor).toEqual(
+      put(
+        createReposLoadedAction({
+          repos: response,
+          username,
+        }),
+      ),
+    );
   });
 
   it('should call the repoLoadingError action if the response errors', () => {
     const response = new Error('Some error');
     const putDescriptor = getReposGenerator.throw(response).value;
-    expect(putDescriptor).toEqual(put(repoLoadingError(response)));
+    expect(putDescriptor).toEqual(
+      put(
+        createRepoLoadingErrorAction({
+          error: response,
+        }),
+      ),
+    );
   });
 });
 
@@ -66,6 +81,8 @@ describe('githubDataSaga Saga', () => {
 
   it('should start task to watch for LOAD_REPOS action', () => {
     const takeLatestDescriptor = githubDataSaga.next().value;
-    expect(takeLatestDescriptor).toEqual(takeLatest(LOAD_REPOS, getRepos));
+    expect(takeLatestDescriptor).toEqual(
+      takeLatest(AppActionType.LOAD_REPOS, getRepos),
+    );
   });
 });

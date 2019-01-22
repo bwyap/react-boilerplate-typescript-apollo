@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import hoistNonReactStatics from './hoistNonReactStatics';
 
 import getInjectors from './reducerInjectors';
-import { ReducerInjectorFn } from './types';
+import { ReducerInjectorFn } from '../typings/utils';
 
 /**
  * Dynamically injects a reducer

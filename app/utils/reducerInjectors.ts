@@ -4,15 +4,15 @@ import { isString, isEmpty, isFunction } from 'lodash';
 import checkStore from './checkStore';
 import createReducer from '../reducers';
 import { Reducer } from 'redux';
+import { MyReduxStore } from '../typings/store';
 import {
   InjectReducerFactory,
   InjectReducerFn,
   GetReducerInjectorsFn,
-} from './types';
-import { ReduxStore } from '../types';
+} from '../typings/utils';
 
 const injectReducerFactory: InjectReducerFactory = (
-  store: ReduxStore,
+  store: MyReduxStore,
   isValid: boolean = false,
 ) => {
   const injectReducer: InjectReducerFn = (key: string, reducer: Reducer) => {
@@ -38,7 +38,7 @@ const injectReducerFactory: InjectReducerFactory = (
   return injectReducer;
 };
 
-const getInjectors: GetReducerInjectorsFn = (store: ReduxStore) => {
+const getInjectors: GetReducerInjectorsFn = (store: MyReduxStore) => {
   checkStore(store);
   return {
     injectReducer: injectReducerFactory(store, true),

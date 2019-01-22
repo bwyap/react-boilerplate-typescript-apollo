@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import AtPrefix from '../AtPrefix';
+import AtPrefix from '../parts/AtPrefix';
 
 describe('<AtPrefix />', () => {
   it('should render an <span> tag', () => {

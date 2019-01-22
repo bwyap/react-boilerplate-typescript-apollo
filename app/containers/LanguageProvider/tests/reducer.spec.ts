@@ -1,21 +1,20 @@
-import languageProviderReducer from '../reducer';
-import { CHANGE_LOCALE } from '../constants';
+import languageProviderReducer from '../store/reducer';
+import { LanguageProviderActionType } from '../store/constants';
+import { ChangeLocaleAction } from '../store/typings/actions';
 
-/* eslint-disable default-case, no-param-reassign */
 describe('languageProviderReducer', () => {
   it('returns the initial state', () => {
-    expect(languageProviderReducer(undefined, {})).toEqual({
+    expect(languageProviderReducer(undefined, {} as any)).toEqual({
       locale: 'en',
     });
   });
 
   it('changes the locale', () => {
-    expect(
-      languageProviderReducer(undefined, {
-        type: CHANGE_LOCALE,
-        locale: 'de',
-      }),
-    ).toEqual({
+    const action: ChangeLocaleAction = {
+      type: LanguageProviderActionType.CHANGE_LOCALE,
+      payload: { locale: 'de' },
+    };
+    expect(languageProviderReducer(undefined, action)).toEqual({
       locale: 'de',
     });
   });
