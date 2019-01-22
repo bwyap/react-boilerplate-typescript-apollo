@@ -7,7 +7,7 @@ jobs:
   test:
     docker:
       - image: circleci/node:10
-    parallelism: 4
+    parallelism: 2
     steps:
       - checkout
       - restore_cache:
@@ -25,7 +25,7 @@ jobs:
             - ~/.cache/yarn
       - run:
           name: Generate test templates
-          command: node ./internals/scripts/generate-templates-for-linting 
+          command: node ./internals/scripts/generate-templates-for-linting
       - run:
           name: Run tests
           command: yarn test:ci
