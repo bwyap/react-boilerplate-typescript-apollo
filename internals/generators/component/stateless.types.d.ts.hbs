@@ -1,10 +1,16 @@
+import { BasicFunctionalComponent } from '../../typings/component';
+
 /**
  *
  * {{ properCase name }} type definitions
  *
  */
 
-export interface {{ properCase name }}ComponentFunction {
-  propTypes?: object;
-  (): JSX.Element;
-}
+export interface {{ properCase name }}ComponentFn
+  extends BasicFunctionalComponent {}
+
+// Import `FunctionalComponent` and uncomment the following if you require props
+// export interface {{ properCase name }}ComponentFn
+//   extends FunctionalComponent<{{ properCase name }}Props> {}
+
+// export interface {{ properCase name }}Props {}

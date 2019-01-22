@@ -1,0 +1,13 @@
+import { ComponentReducerFn } from '../../../../typings/store';
+import { {{ properCase name }}ActionType } from '../constants';
+
+/*
+ *
+ * {{ properCase name }} reducer typings
+ *
+ */
+
+export interface {{ properCase name }}ReducerFn
+  extends ComponentReducerFn<{{ properCase name }}ReducerState, {{ properCase name }}ActionType> {}
+
+export interface {{ properCase name }}ReducerState {}

@@ -53,7 +53,7 @@ module.exports = {
   actions: data => {
     // Generate index.tsx, types.d.ts and index.spec.tsx
     let componentTemplate;
-    let typeTemplate
+    let typeTemplate;
 
     switch (data.type) {
       case 'Stateless Function': {
@@ -70,7 +70,7 @@ module.exports = {
     const actions = [
       {
         type: 'add',
-        path: '../../app/components/{{properCase name}}/index.tsx',
+        path: '../../app/components/{{properCase name}}/parts/{{properCase name}}.tsx',
         templateFile: componentTemplate,
         abortOnFail: true,
       },
@@ -78,6 +78,12 @@ module.exports = {
         type: 'add',
         path: '../../app/components/{{properCase name}}/types.d.ts',
         templateFile: typeTemplate,
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: '../../app/components/{{properCase name}}/index.ts',
+        templateFile: './component/index.ts.hbs',
         abortOnFail: true,
       },
       {

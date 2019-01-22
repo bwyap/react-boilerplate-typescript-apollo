@@ -44,7 +44,6 @@ function hasGitRepository() {
 
       const regex = new RegExp(/fatal:\s+Not\s+a\s+git\s+repository/, 'i');
 
-      /* eslint-disable-next-line no-unused-expressions */
       regex.test(stdout) ? resolve(false) : resolve(true);
     });
   });
@@ -105,7 +104,6 @@ function askUserIfWeShouldRemoveRepo() {
           .trim()
           .toLowerCase() || 'y';
 
-      /* eslint-disable-next-line no-unused-expressions */
       answer === 'y' ? resolve(true) : resolve(false);
     });
   });

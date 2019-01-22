@@ -1,10 +1,12 @@
-import { createSelector } from 'reselect';
+import { createSelector, Selector } from 'reselect';
+import { MyReducerState } from '../../../typings/store';
+import { {{ properCase name }}ReducerState } from '../store/typings/reducer';
 
 /**
  * Direct selector to the {{ camelCase name }} state domain
  */
 
-const select{{ properCase name }}Domain = state => state.{{ camelCase name }};
+const select{{ properCase name }}Domain: Selector<MyReducerState, {{ properCase name }}ReducerState> = state => state.{{ camelCase name }};
 
 /**
  * Other specific selectors

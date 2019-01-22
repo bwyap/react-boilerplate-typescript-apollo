@@ -33,9 +33,19 @@ module.exports = plop => {
       '/../../app/',
       config.path,
       plop.getHelper('properCase')(answers.name),
-      '**.{ts,tsx}',
+      `**/**.{ts,tsx}`,
     )}`;
-    exec(`npm run prettify -- "${folderPath}"`);
+    exec(`yarn prettify "${folderPath}"`);
+    return folderPath;
+  });
+  plop.setActionType('prettify-dir', (answers, config) => {
+    const folderPath = `${path.join(
+      __dirname,
+      '/../../app/',
+      config.path,
+      `**/**.{ts,tsx}`,
+    )}`;
+    exec(`yarn prettify "${folderPath}"`);
     return folderPath;
   });
 };

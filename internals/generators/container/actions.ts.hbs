@@ -4,8 +4,27 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import { {{ properCase name }}ActionType } from './constants';
+import {
+  SimpleActionCreator,
+  // ActionCreator,
+} from '../../../typings/store';
 
-export const defaultAction = () => ({
-    type: DEFAULT_ACTION,
+import { DefaultAction } from './typings/actions';
+
+// Create the default action
+export const createDefaultAction: SimpleActionCreator<
+  DefaultAction
+> = () => ({
+  type: {{ properCase name }}ActionType.DEFAULT_ACTION,
 });
+
+// Example of an action using a payload
+// export const createAnotherAction: ActionCreator<
+//   AnotherAction,
+//   AnotherActionPayload
+// > = payload => ({
+//   type: {{ properCase name }}ActionType.ANOTHER_ACTION,
+//   payload,
+// });
+//

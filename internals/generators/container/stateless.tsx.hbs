@@ -6,7 +6,6 @@
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 {{#if wantHeaders}}
 import { Helmet } from 'react-helmet';
 {{/if}}
@@ -14,26 +13,42 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 {{/if}}
 {{#if wantActionsAndReducer}}
+import { connect, MapStateToProps, MapDispatchToProps } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-{{/if}}
 import { compose } from 'redux';
+{{else}}
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+{{/if}}
 
 {{#if wantSaga}}
-import injectSaga from '../../utils/injectSaga';
+import injectSaga from '../../../utils/injectSaga';
 {{/if}}
 {{#if wantActionsAndReducer}}
-import injectReducer from '../../utils/injectReducer';
-import makeSelect{{properCase name}} from './selectors';
-import reducer from './reducer';
+import injectReducer from '../../../utils/injectReducer';
+import makeSelect{{properCase name}} from '../store/selectors';
+import reducer from '../store/reducer';
 {{/if}}
 {{#if wantSaga}}
-import saga from './saga';
+import saga from '../store/saga';
 {{/if}}
 {{#if wantMessages}}
-import messages from './messages';
+import messages from '../messages';
 {{/if}}
 
-const {{ properCase name }} = () => (
+{{#if wantActionsAndReducer}}
+import { MyReducerState } from '../../../typings/store';
+import {
+  {{ properCase name }}ComponentFn,
+  {{ properCase name }}DispatchProps,
+  {{ properCase name }}StateProps,
+  {{ properCase name }}Props,
+} from '../types';
+{{else}}
+import { {{ properCase name }}ComponentFn } from '../types';
+{{/if}}
+
+export const {{ properCase name }}: {{ properCase name }}ComponentFn = () => (
     <div>
     {{#if wantHeaders}}
       <Helmet>
@@ -48,21 +63,29 @@ const {{ properCase name }} = () => (
 );
 
 {{ properCase name }}.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  {{ camelCase name }}: PropTypes.object,
 };
 
 {{#if wantActionsAndReducer}}
-const mapStateToProps = createStructuredSelector({
+const mapStateToProps: MapStateToProps<
+  {{ properCase name }}DispatchProps,
+  {{ properCase name }}Props,
+  MyReducerState
+> = createStructuredSelector({
   {{ camelCase name }}: makeSelect{{properCase name}}(),
 });
 {{/if}}
 
-const mapDispatchToProps = dispatch => ({
-  dispatch,
-});
+const mapDispatchToProps: MapDispatchToProps<
+  {{ properCase name }}StateProps,
+  {{ properCase name }}Props
+> = dispatch => ({});
 
 {{#if wantActionsAndReducer}}
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
 
 const withReducer = injectReducer({ key: '{{ camelCase name }}', reducer });
 {{else}}

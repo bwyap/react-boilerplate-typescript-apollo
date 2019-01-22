@@ -1,0 +1,33 @@
+import { Dispatch } from 'redux';
+import { {{ properCase name }}ReducerState } from './store/typings/reducer';
+
+/**
+ *
+ * {{ properCase name }} type definitions
+ *
+ */
+
+// Props that should be passed to {{ properCase name }} manually
+export interface {{ properCase name }}Props {}
+
+// Props that should be passed to {{ properCase name }} through MapDispatchToProps
+export interface {{ properCase name }}DispatchProps {
+  // dispatchAction: Dispatcher<ActionName>;
+}
+
+// Props that should be passed to {{ properCase name }} through MapStateToProps
+{{#if wantActionsAndReducer}}
+export interface {{ properCase name }}StateProps {
+  {{ camelCase name }}?: {{ properCase name }}ReducerState
+}
+{{else}}
+export interface {{ properCase name }}StateProps {}
+{{/if}}
+
+
+// All props that are passed to {{ properCase name }}
+export interface {{ properCase name }}AllProps
+  extends {{ properCase name }}Props, {{ properCase name }}DispatchProps, {{ properCase name }}StateProps {}
+
+// Internal state for {{ properCase name }}
+export interface {{ properCase name }}State {}

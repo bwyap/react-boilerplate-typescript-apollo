@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 /**
  * This script will extract the internationalization messages from all components
  * and package them in the translation json files in the translations file.

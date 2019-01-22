@@ -1,0 +1,30 @@
+import { Action } from 'redux';
+import { {{ properCase name }}ActionType } from '../constants';
+
+/**
+ *
+ * {{ properCase name }} action typings
+ *
+ */
+
+// Actions
+
+// Add all action types to this union
+export type {{ properCase name }}Actions = DefaultAction;
+
+// The default action
+export interface DefaultAction extends Action<{{ properCase name }}ActionType> {
+  type: {{ properCase name }}ActionType.DEFAULT_ACTION;
+}
+
+// Example of an action using a payload
+// export interface AnotherAction extends Action<{{ properCase name }}ActionType> {
+//   type: {{ properCase name }}ActionType.ANOTHER_ACTION;
+//   payload: AnotherActionPayload;
+// }
+
+// Action payloads
+
+// export interface AnotherActionPayload {
+//   information: string;
+// }

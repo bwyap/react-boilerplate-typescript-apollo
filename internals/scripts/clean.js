@@ -1,6 +1,8 @@
 const shell = require('shelljs');
 const addCheckMark = require('./helpers/checkmark.js');
 
+// TODO: Fix templates!
+
 if (!shell.which('git')) {
   shell.echo('Sorry, this script requires git');
   shell.exit(1);

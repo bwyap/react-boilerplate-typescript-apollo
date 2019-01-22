@@ -1,8 +1,7 @@
 // import produce from 'immer';
-import {{ camelCase name }}Reducer from '../reducer';
-// import { someAction } from '../actions';
+import {{ camelCase name }}Reducer from '../store/reducer';
+// import { someAction } from '../store/actions';
 
-/* eslint-disable default-case, no-param-reassign */
 describe('{{ camelCase name }}Reducer', () => {
   let state;
   beforeEach(() => {
@@ -13,7 +12,7 @@ describe('{{ camelCase name }}Reducer', () => {
 
   it('returns the initial state', () => {
     const expectedResult = state;
-    expect({{ camelCase name }}Reducer(undefined, {})).toEqual(expectedResult);
+    expect({{ camelCase name }}Reducer(undefined, {} as any)).toEqual(expectedResult);
   });
 
   /**

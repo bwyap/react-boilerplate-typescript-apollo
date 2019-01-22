@@ -5,38 +5,46 @@
  */
 
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+// import * as PropTypes from 'prop-types';
 {{#if wantHeaders}}
 import { Helmet } from 'react-helmet';
 {{/if}}
-{{#if wantMessages}}
-import { FormattedMessage } from 'react-intl';
-{{/if}}
+
 {{#if wantActionsAndReducer}}
+import { connect, MapStateToProps, MapDispatchToProps } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+{{else}}
+import { connect } from 'react-redux';
 {{/if}}
 import { compose } from 'redux';
+import { MyReducerState } from '../../../typings/store';
+import {
+  {{ properCase name }}Props,
+  {{ properCase name }}DispatchProps,
+  {{ properCase name }}StateProps,
+  {{ properCase name }}AllProps,
+  {{ properCase name }}State,
+} from '../types';
 
 {{#if wantSaga}}
-import injectSaga from '../../utils/injectSaga';
+import injectSaga from '../../../utils/injectSaga';
 {{/if}}
 {{#if wantActionsAndReducer}}
-import injectReducer from '../../utils/injectReducer';
-import makeSelect{{properCase name}} from './selectors';
-import reducer from './reducer';
+import injectReducer from '../../../utils/injectReducer';
+import makeSelect{{properCase name}} from '../store/selectors';
+import reducer from '../store/reducer';
 {{/if}}
 {{#if wantSaga}}
-import saga from './saga';
-{{/if}}
-{{#if wantMessages}}
-import messages from './messages';
+import saga from '../store/saga';
 {{/if}}
 
-export class {{ properCase name }} extends {{{ type }}} {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-  };
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+import messages from '../messages';
+{{/if}}
+
+export class {{ properCase name }} extends {{{ type }}}<{{ properCase name }}AllProps, {{ properCase name }}State> {
+  // static propTypes = {};
 
   render() {
     return (
@@ -56,13 +64,14 @@ export class {{ properCase name }} extends {{{ type }}} {
 }
 
 {{#if wantActionsAndReducer}}
-const mapStateToProps = createStructuredSelector({
+const mapStateToProps: MapStateToProps<{{ properCase name }}StateProps, {{ properCase name }}Props, MyReducerState> =
+createStructuredSelector({
   {{ camelCase name }}: makeSelect{{properCase name}}(),
 });
 {{/if}}
 
-const mapDispatchToProps = dispatch => ({
-  dispatch,
+const mapDispatchToProps: MapDispatchToProps<{{ properCase name }}DispatchProps, {{ properCase name }}Props> = dispatch => ({
+  // dispatchAction: payload => dispatch(createAction(payload)),
 });
 
 {{#if wantActionsAndReducer}}

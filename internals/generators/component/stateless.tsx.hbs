@@ -7,14 +7,14 @@
 import * as React from 'react';
 // import * as PropTypes from 'prop-types';
 // import styled from 'styled-components';
-import { {{ properCase name }}ComponentFunction } from './types';
+import { {{ properCase name }}ComponentFn } from '../types';
 
 {{#if wantMessages}}
 import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+import messages from '../messages';
 {{/if}}
 
-const {{ properCase name }}: {{ properCase name }}ComponentFunction = () => (
+const {{ properCase name }}: {{ properCase name }}ComponentFn = () => (
   <div>
   {{#if wantMessages}}
     <FormattedMessage {...messages.header} />
@@ -22,6 +22,7 @@ const {{ properCase name }}: {{ properCase name }}ComponentFunction = () => (
   </div>
 );
 
-{{ properCase name }}.propTypes = {};
+// Use `FunctionalComponent` in `types.d.ts` and uncomment this if you require props
+// {{ properCase name }}.propTypes = {};
 
 export default {{ properCase name }};
