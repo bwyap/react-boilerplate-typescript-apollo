@@ -9,6 +9,8 @@ script:
   - yarn test:ci --maxWorkers=4
   # uncomment the following command if you want to test build
   # - yarn build
+  - yarn coveralls
+  - codecov
 
 before_install:
   - export CHROME_BIN=chromium-browser

@@ -1,5 +1,8 @@
 version: 2.1
 
+## CircleCI has been disabled for this repository as
+## the build was having environment issues.
+
 orbs:
   codecov: codecov/codecov@1.0.2
 
