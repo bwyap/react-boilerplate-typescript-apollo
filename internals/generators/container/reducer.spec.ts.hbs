@@ -1,0 +1,31 @@
+// import produce from 'immer';
+import {{ camelCase name }}Reducer from '../store/reducer';
+// import { someAction } from '../store/actions';
+
+describe('{{ camelCase name }}Reducer', () => {
+  let state;
+  beforeEach(() => {
+    state = {
+      // default state params here
+    };
+  });
+
+  it('returns the initial state', () => {
+    const expectedResult = state;
+    expect({{ camelCase name }}Reducer(undefined, {} as any)).toEqual(expectedResult);
+  });
+
+  /**
+   * Example state change comparison
+   *
+   * it('should handle the someAction action correctly', () => {
+   *   const expectedResult = produce(state, draft => {
+   *     draft.loading = true;
+   *     draft.error = false;
+   *     draft.userData.nested = false;
+   *   });
+   *
+   *   expect(appReducer(state, someAction())).toEqual(expectedResult);
+   * });
+   */
+});

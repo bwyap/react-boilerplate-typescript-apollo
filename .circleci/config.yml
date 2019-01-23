@@ -1,5 +1,8 @@
 version: 2.1
 
+## CircleCI has been disabled for this repository as
+## the build was having environment issues.
+
 orbs:
   codecov: codecov/codecov@1.0.2
 
@@ -24,8 +27,8 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run:
-          name: Generate test templates
-          command: node ./internals/scripts/generate-templates-for-linting 
+          name: Generate and test templates
+          command: node ./internals/scripts/generate-templates-for-linting
       - run:
           name: Run tests
           command: yarn test:ci

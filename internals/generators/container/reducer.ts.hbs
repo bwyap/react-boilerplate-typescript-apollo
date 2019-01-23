@@ -1,0 +1,22 @@
+/*
+ *
+ * {{ properCase name }} reducer
+ *
+ */
+import produce from 'immer';
+import { {{ properCase name }}ActionType } from './constants';
+import { {{ properCase name }}ReducerState, {{ properCase name }}ReducerFn } from './typings/reducer';
+
+export const initialState: {{ properCase name }}ReducerState = {};
+
+const {{ camelCase name }}Reducer: {{ properCase name }}ReducerFn = (state = initialState, action) =>
+  produce(state, draft => {
+    switch (action.type) {
+      case {{ properCase name }}ActionType.DEFAULT_ACTION:
+        return draft;
+      default:
+        return draft;
+    }
+  });
+
+export default {{ camelCase name }}Reducer;

@@ -47,9 +47,9 @@
     <img src="https://ci.appveyor.com/api/projects/status/bx1ukbj359gbeshl?svg=true" alt="Build status (Appveyor)" />
   </a>
   <!-- Build Status - CircleCI -->
-  <a href="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo">
+  <!-- <a href="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo">
     <img src="https://img.shields.io/circleci/project/github/bwyap/react-boilerplate-typescript-apollo.svg?logo=CircleCI" alt="Build status (Circle CI)" />
-  </a>
+  </a> -->
   <!-- Deploy Status - Netlify -->
   <a href="https://app.netlify.com/sites/react-boilerplate-typescript-apollo/deploys">
     <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://api.netlify.com/api/v1/sites/react-boilerplate-typescript-apollo.netlify.com/deploys&label=deploy&query=$[0].state&colorB=blue" alt="Deploy status (Netlify)" />
@@ -62,7 +62,7 @@
 
 ---
 
-*An opinionated fork of react-boilerplate made for the GraphQL stack, written in Typescript.*
+_An opinionated fork of react-boilerplate made for the GraphQL stack, written in Typescript._
 
 This fork was created to extend the great work done by the guys at react-boilerplate to provide
 an opinionated set up with one of the most popular stacks out there: [the GraphQL stack](https://www.apollographql.com/why-graphql).

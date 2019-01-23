@@ -1,0 +1,28 @@
+/**
+ *
+ * {{ properCase name }}
+ *
+ */
+
+import * as React from 'react';
+// import * as PropTypes from 'prop-types';
+// import styled from 'styled-components';
+import { {{ properCase name }}ComponentFn } from '../types';
+
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+import messages from '../messages';
+{{/if}}
+
+const {{ properCase name }}: {{ properCase name }}ComponentFn = () => (
+  <div>
+  {{#if wantMessages}}
+    <FormattedMessage {...messages.header} />
+  {{/if}}
+  </div>
+);
+
+// Use `FunctionalComponent` in `types.d.ts` and uncomment this if you require props
+// {{ properCase name }}.propTypes = {};
+
+export default {{ properCase name }};
