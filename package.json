@@ -40,11 +40,12 @@
     "pretest": "yarn test:clean && yarn lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
-    "test:ci": "cross-env NODE_ENV=test jest --coverage --ci --reporters=default --reporters=jest-junit && codecov",
+    "test:ci": "cross-env NODE_ENV=test jest --coverage --ci --reporters=default --reporters=jest-junit",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "test:updateSnapshot": "cross-env NODE_ENV=test jest --updateSnapshot",
     "test:upload-appveyor": "node ./internals/scripts/upload-tests-appveyor",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "codecov": "codecov",
     "prettify": "prettier --write"
   },
   "jest-junit": {
