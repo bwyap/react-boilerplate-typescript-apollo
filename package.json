@@ -33,8 +33,8 @@
     "generate": "plop --plopfile internals/generators/index.js",
     "lint": "yarn lint:tslint:all && yarn lint:css",
     "lint:tslint": "tslint --project tsconfig.json",
-    "lint:tslint:all": "tslint --project tsconfig.json 'app/**/*.{ts,tsx}'",
-    "lint:tslint:fix": "tslint --project tsconfig.json --fix",
+    "lint:tslint:all": "tslint --project tsconfig.json --config tslint.json 'app/**/*.{ts,tsx}'",
+    "lint:tslint:fix": "tslint --project tsconfig.json --config tslint.json --fix",
     "lint:css": "stylelint './app/**/*.js'",
     "lint:staged": "lint-staged",
     "pretest": "yarn test:clean && yarn lint",
@@ -51,22 +51,6 @@
   "jest-junit": {
     "outputDirectory": "test-results/jest",
     "outputName": "results.xml"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "yarn lint:tslint:fix",
-      "prettier --write",
-      "git add --force"
-    ],
-    "*.tsx": [
-      "yarn lint:tslint:fix",
-      "prettier --write",
-      "git add --force"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add --force"
-    ]
   },
   "pre-commit": "lint:staged",
   "resolutions": {
@@ -180,7 +164,7 @@
     "jest-dom": "2.1.1",
     "jest-junit": "6.0.1",
     "jest-styled-components": "6.2.2",
-    "lint-staged": "8.0.4",
+    "lint-staged": "8.1.0",
     "ngrok": "3.1.0",
     "node-plop": "0.16.0",
     "null-loader": "0.1.1",
