@@ -76,5 +76,8 @@
     "jsx-self-close": true,
     "jsx-wrap-multiline": true,
     "jsx-boolean-value": false
+  },
+  "jsRules": {
+    "object-literal-sort-keys": false
   }
 }

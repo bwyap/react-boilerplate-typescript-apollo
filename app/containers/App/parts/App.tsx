@@ -20,7 +20,7 @@ import Footer from '../../../components/Footer';
 
 import GlobalStyle from '../../../global-styles';
 
-import { AppComponentFn } from '../types';
+import { AppProps } from '../types';
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
@@ -31,23 +31,30 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
-const App: AppComponentFn = () => (
-  <AppWrapper>
-    <Helmet
-      titleTemplate="%s - React.js Boilerplate"
-      defaultTitle="React.js Boilerplate"
-    >
-      <meta name="description" content="A React.js Boilerplate application" />
-    </Helmet>
-    <Header />
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/features" component={FeaturePage} />
-      <Route path="" component={NotFoundPage} />
-    </Switch>
-    <Footer />
-    <GlobalStyle />
-  </AppWrapper>
-);
+class App extends React.PureComponent<AppProps> {
+  render() {
+    return (
+      <AppWrapper>
+        <Helmet
+          titleTemplate="%s - React.js Boilerplate"
+          defaultTitle="React.js Boilerplate"
+        >
+          <meta
+            name="description"
+            content="A React.js Boilerplate application"
+          />
+        </Helmet>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/features" component={FeaturePage} />
+          <Route path="" component={NotFoundPage} />
+        </Switch>
+        <Footer />
+        <GlobalStyle />
+      </AppWrapper>
+    );
+  }
+}
 
 export default App;
