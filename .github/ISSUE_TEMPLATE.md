@@ -1,6 +1,6 @@
-# React Boilerplate
+# React Boilerplate: Typescript & Apollo
 
-Before opening a new issue, please take a moment to review our [**community guidelines**](https://github.com/react-boilerplate/react-boilerplate/blob/master/CONTRIBUTING.md) to make the contribution process easy and effective for everyone involved.
+Before opening a new issue, please take a moment to review our [**community guidelines**](https://github.com/bwyap/react-boilerplate-typescript-apollo/blob/master/CONTRIBUTING.md) to make the contribution process easy and effective for everyone involved.
 
 Please direct redux-saga related questions to stack overflow:
 http://stackoverflow.com/questions/tagged/redux-saga
@@ -9,12 +9,12 @@ For questions related to the boilerplate itself, you can also find answers on Sp
 https://spectrum.chat/react-boilerplate
 
 **Before opening a new issue, you may find an answer in already closed issues**:
-https://github.com/react-boilerplate/react-boilerplate/issues?q=is%3Aissue+is%3Aclosed
+https://github.com/bwyap/react-boilerplate-typescript-apollo/issues?q=is%3Aissue+is%3Aclosed
 
 ## Issue Type
 
-- [ ] Bug (https://github.com/react-boilerplate/react-boilerplate/blob/master/CONTRIBUTING.md#bug-reports)
-- [ ] Feature (https://github.com/react-boilerplate/react-boilerplate/blob/master/CONTRIBUTING.md#feature-requests)
+- [ ] Bug (https://github.com/bwyap/react-boilerplate-typescript-apollo/blob/master/CONTRIBUTING.md#bug-reports)
+- [ ] Feature (https://github.com/bwyap/react-boilerplate-typescript-apollo/blob/master/CONTRIBUTING.md#feature-requests)
 
 ## Description
 
@@ -26,6 +26,6 @@ https://github.com/react-boilerplate/react-boilerplate/issues?q=is%3Aissue+is%3A
 
 # Versions
 
-- React-Boilerplate (see `package.json`):
+- React Boilerplate Typescript Apollo (see `package.json`):
 - Node/NPM:
 - Browser:

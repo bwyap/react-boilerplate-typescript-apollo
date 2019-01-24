@@ -42,6 +42,7 @@ jobs:
       - run:
           name: Run build
           command: yarn build
+
 workflows:
   version: 2
   test:
