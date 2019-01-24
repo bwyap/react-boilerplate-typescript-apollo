@@ -29,9 +29,8 @@ export default function configureStore(
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
   const composeEnhancers =
-    process.env.NODE_ENV !== 'production' &&
-    !!window &&
-    (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    // process.env.NODE_ENV !== 'production' &&
+    !!window && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
       ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
       : compose;
 

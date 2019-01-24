@@ -5,7 +5,7 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
-import history from '../app/utils/history';
+import history from './utils/history';
 import appReducer from './containers/App/store/reducer';
 import languageProviderReducer from './containers/LanguageProvider/store/reducer';
 import { MyInjectedReducers } from './typings/store-injected';
