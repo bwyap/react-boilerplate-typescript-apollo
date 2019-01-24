@@ -38,8 +38,7 @@ test_script:
   - node --version
   # run tests
   - node ./internals/scripts/generate-templates-for-linting
-  - yarn test:ci
-  - yarn test --json --outputFile=results.json
+  - yarn test:ci --json --outputFile=results.json
   # upload results to AppVeyor
   - yarn test:upload-appveyor
   # uncomment the following command if you want to test build
@@ -48,7 +47,6 @@ test_script:
 # Cache node_modules for faster builds
 cache:
   - "%LOCALAPPDATA%\\Yarn"
-
 # remove, as appveyor doesn't support secure variables on pr builds
 # so `COVERALLS_REPO_TOKEN` cannot be set, without hard-coding in this file
 #on_success:
