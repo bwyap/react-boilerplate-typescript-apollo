@@ -1,3 +1,6 @@
-import LanguageProvider from './parts/LanguageProvider';
+import ConnectedLanguageProvider, {
+  LanguageProvider,
+} from './parts/LanguageProvider';
 
-export default LanguageProvider;
+export default ConnectedLanguageProvider;
+export { LanguageProvider };

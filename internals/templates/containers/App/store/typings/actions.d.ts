@@ -13,7 +13,10 @@ import { AppActionType } from '../constants';
 
 // Actions
 
-// FIXME: there should be actions defined here
-export type AppActions = undefined;
+export type AppActions = DefaultAction;
+
+export interface DefaultAction extends Action<AppActionType> {
+  type: AppActionType.DEFAULT_ACTION;
+}
 
 // Action payloads

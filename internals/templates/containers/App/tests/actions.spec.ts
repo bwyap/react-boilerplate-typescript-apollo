@@ -1,21 +1,15 @@
-// import { AppActionType } from '../store/constants';
+import { AppActionType } from '../store/constants';
 
-// import {
-//   // TODO: import actions
-// } from '../store/actions';
+import { createDefaultAction } from '../store/actions';
+import { DefaultAction } from '../store/typings/actions';
 
 describe('App Actions', () => {
-  describe('exampleAction1', () => {
+  describe('defaultAction', () => {
     it('should return the correct type', () => {
-      // TODO: specify tests
-      expect(true).toBe(false);
-    });
-  });
-
-  describe('exampleAction2', () => {
-    it('should return the correct type and payload', () => {
-      // TODO: specify tests
-      expect(true).toBe(false);
+      const expectedResult: DefaultAction = {
+        type: AppActionType.DEFAULT_ACTION,
+      };
+      expect(createDefaultAction()).toEqual(expectedResult);
     });
   });
 });

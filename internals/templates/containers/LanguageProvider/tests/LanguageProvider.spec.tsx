@@ -5,9 +5,7 @@ import { FormattedMessage, defineMessages } from 'react-intl';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 
-import ConnectedLanguageProvider, {
-  LanguageProvider,
-} from '../parts/LanguageProvider';
+import ConnectedLanguageProvider, { LanguageProvider } from '../index';
 import configureStore from '../../../configureStore';
 
 import { translationMessages } from '../../../i18n';

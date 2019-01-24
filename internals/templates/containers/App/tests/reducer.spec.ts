@@ -1,18 +1,24 @@
-// import produce from 'immer';
+import produce from 'immer';
 
-// import appReducer from '../store/reducer';
-// import {
-//   // TODO: import actions
-// } from '../store/actions';
+import { AppReducerState } from '../store/typings/reducer';
+import appReducer from '../store/reducer';
+import { createDefaultAction } from '../store/actions';
 
 describe('appReducer', () => {
-  it('should return the initial state', () => {
-    // TODO: add tests
-    expect(true).toBe(false);
+  let state: AppReducerState;
+  beforeEach(() => {
+    state = {};
   });
 
-  it('should handle EXAMPLE action correctly', () => {
-    // TODO: add tests
-    expect(true).toBe(false);
+  it('should return the initial state', () => {
+    const expectedResult = state;
+    expect(appReducer(undefined, {} as any)).toEqual(expectedResult);
+  });
+
+  it('should handle DefaultAction action correctly', () => {
+    const expectedResult = produce(state, draft => {
+      // Modify draft here
+    });
+    expect(appReducer(state, createDefaultAction())).toEqual(expectedResult);
   });
 });

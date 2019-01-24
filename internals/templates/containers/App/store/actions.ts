@@ -14,5 +14,12 @@
  * 2) Add an action creator function here
  */
 
-// import { AppActionType } from './constants';
+import { AppActionType } from './constants';
 // import { SimpleActionCreator, ActionCreator } from '../../../typings/store';
+import { SimpleActionCreator } from '../../../typings/store';
+import { DefaultAction } from './typings/actions';
+
+// Create the default action
+export const createDefaultAction: SimpleActionCreator<DefaultAction> = () => ({
+  type: AppActionType.DEFAULT_ACTION,
+});

@@ -13,24 +13,11 @@ import {
   MapDispatchToPropsFunction,
   MapStateToProps,
 } from 'react-redux';
-import { compose } from 'redux';
-import { createStructuredSelector } from 'reselect';
-
-import injectReducer from '../../../utils/injectReducer';
-import injectSaga from '../../../utils/injectSaga';
 
 import messages from '../messages';
-import reducer from '../store/reducer';
-import saga from '../store/saga';
-import {
-  HomePageMergedProps,
-  HomePageDispatchProps,
-  HomePageProps,
-  HomePageStateProps,
-} from '../types';
-import { MyReducerState } from '../../../typings/store';
+import { HomePageProps } from '../types';
 
-export class HomePage extends React.PureComponent<HomePageMergedProps> {
+export class HomePage extends React.PureComponent<HomePageProps> {
   // static propTypes = {};
 
   render() {
@@ -56,29 +43,4 @@ export class HomePage extends React.PureComponent<HomePageMergedProps> {
   }
 }
 
-const mapDispatchToProps: MapDispatchToPropsFunction<
-  HomePageDispatchProps,
-  HomePageProps
-> = dispatch => ({});
-
-const mapStateToProps: MapStateToProps<
-  HomePageStateProps,
-  HomePageProps,
-  MyReducerState
-> = createStructuredSelector({});
-
-const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-);
-
-const withReducer = injectReducer({ key: 'home', reducer });
-const withSaga = injectSaga({ key: 'home', saga });
-
-export default compose(
-  withReducer,
-  withSaga,
-  withConnect,
-)(HomePage);
-
-export { mapDispatchToProps };
+export default HomePage;

@@ -75,9 +75,9 @@ if (module.hot) {
 
 // Chunked polyfill for browsers without Intl support
 if (!(window as any).Intl) {
+  // prettier-ignore
   const translations = [
     'intl/locale-data/jsonp/en.js',
-    'intl/locale-data/jsonp/de.js',
   ];
   new Promise(resolve => {
     resolve(import('intl'));

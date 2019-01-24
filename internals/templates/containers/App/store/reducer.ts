@@ -9,6 +9,7 @@
 
 import produce from 'immer';
 import { AppReducerState, AppReducerFn } from './typings/reducer';
+import { AppActionType } from './constants';
 
 // The initial state of the App
 export const initialState: AppReducerState = {};
@@ -16,6 +17,8 @@ export const initialState: AppReducerState = {};
 const appReducer: AppReducerFn = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
+      case AppActionType.DEFAULT_ACTION:
+        break;
       default:
         break;
     }

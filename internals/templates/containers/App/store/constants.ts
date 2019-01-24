@@ -9,4 +9,6 @@
  * YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT'
  */
 
-export enum AppActionType {}
+export enum AppActionType {
+  DEFAULT_ACTION = 'boilerplate/App/DEFAULT_ACTION',
+}
