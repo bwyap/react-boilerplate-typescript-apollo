@@ -1,7 +1,9 @@
 module.exports = {
   collectCoverageFrom: [
     'app/**/*.{ts,tsx}',
+    '!app/**/*.d.ts',
     '!app/**/*.test.{ts,tsx}',
+    '!app/**/*.spec.{ts,tsx}',
     '!app/*/RbGen*/**/*.{ts,tsx}',
     '!app/app.tsx',
     '!app/global-styles.ts',
