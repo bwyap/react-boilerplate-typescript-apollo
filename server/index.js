@@ -30,7 +30,7 @@ const prettyHost = customHost || 'localhost';
 
 // use the gzipped bundle
 app.get('*.js', (req, res, next) => {
-  req.url = req.url + '.gz'; // eslint-disable-line
+  req.url = req.url + '.gz';
   res.set('Content-Encoding', 'gzip');
   next();
 });
