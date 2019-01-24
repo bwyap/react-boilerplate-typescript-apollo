@@ -47,9 +47,9 @@
     <img src="https://ci.appveyor.com/api/projects/status/bx1ukbj359gbeshl?svg=true" alt="Build status (Appveyor)" />
   </a>
   <!-- Build Status - CircleCI -->
-  <a href="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo">
+  <!-- <a href="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo">
     <img src="https://img.shields.io/circleci/project/github/bwyap/react-boilerplate-typescript-apollo.svg?logo=CircleCI" alt="Build status (Circle CI)" />
-  </a>
+  </a> -->
   <!-- Deploy Status - Netlify -->
   <a href="https://app.netlify.com/sites/react-boilerplate-typescript-apollo/deploys">
     <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://api.netlify.com/api/v1/sites/react-boilerplate-typescript-apollo.netlify.com/deploys&label=deploy&query=$[0].state&colorB=blue" alt="Deploy status (Netlify)" />
@@ -62,21 +62,21 @@
 
 ---
 
-*An opinionated fork of react-boilerplate made for the GraphQL stack, written in Typescript.*
+_An opinionated fork of react-boilerplate made for the GraphQL stack, written in Typescript._
 
-This fork was created to extend the great work done by the guys at react-boilerplate to provide
+This fork was created to extend the great work done by the guys at [React-Boilerplate](https://github.com/react-boilerplate/react-boilerplate) to provide
 an opinionated set up with one of the most popular stacks out there: [the GraphQL stack](https://www.apollographql.com/why-graphql).
+
+Currently up to date with **React-Boilerplate** v3.7.0.
 
 #### New in `react-boilerplate-typescript-apollo`
 
-- [ ] Add React Storybook integration (?)
-- [ ] Add Apollo client integration
-- [ ] Add Typescript integration
-- [x] Replace [enzyme](https://github.com/airbnb/enzyme) with [react-testing-library](https://github.com/kentcdodds/react-testing-library) (by @Mensae)
-- [x] Replace [Immutable.js](https://facebook.github.io/immutable-js/) with [Immer](https://github.com/mweststrate/immer) (by @julianben)
-- [x] Add [commit linting](https://github.com/marionebl/commitlint) through [husky](https://github.com/typicode/husky) to enforce consistent commit message style
+- [ ] Apollo client integration
+- [x] Typescript integration
+- [x] [react-testing-library](https://github.com/kentcdodds/react-testing-library) replaces [enzyme](https://github.com/airbnb/enzyme) (by @Mensae)
+- [x] [Immer](https://github.com/mweststrate/immer) replaces [Immutable.js](https://facebook.github.io/immutable-js/) (by @julianben)
+- [x] [Commit linting](https://github.com/marionebl/commitlint) with [husky](https://github.com/typicode/husky) to enforce consistent commit message style
 - [x] Prefer [yarn](https://yarnpkg.com) by providing a `yarn.lock` file
-- [x] Add configuration for CircleCI
 
 ---
 
@@ -150,12 +150,12 @@ But wait... there's more!
 - _The fastest fonts:_ Say goodbye to vacant text.
 - _Stay fast_: Profile your app's performance from the comfort of your command
   line!
-- _Catch problems:_ CircleCI, AppVeyor and TravisCI setups included by default, so your
+- _Catch problems:_ AppVeyor and TravisCI setups included by default, so your
   tests get run automatically on Windows and Unix.
 
 There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on how to structure your React.js apps with scalability in mind. It provides rationale for the majority of boilerplate's design decisions.
 
-<sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
+<sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
 
 ## Quick start
 

@@ -1,1 +1,5 @@
-[]
+{
+  "boilerplate.containers.HomePage.start_project.header": "React Boilerplate - Now in Typescript with Apollo-Client!",
+  "boilerplate.containers.HomePage.start_project.message": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "boilerplate.containers.NotFoundPage.header": "Page not found."
+}

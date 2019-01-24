@@ -2,15 +2,12 @@
 
 To remove `sanitize.css` you will need to remove it from both:
 
-- [`app.js`](../../app/app.js)
+- [`app.ts`](../../app/app.tsx)
 
 ```diff
-import FontFaceObserver from 'fontfaceobserver';
-import history from 'utils/history';
+import * as FontFaceObserver from 'fontfaceobserver';
+import history from './utils/history';
 -import 'sanitize.css/sanitize.css';
-
-// Import root app
-import App from 'containers/App';
 ```
 
 - [`package.json`](../../package.json)!
@@ -18,10 +15,8 @@ import App from 'containers/App';
 ```diff
 "dependencies": {
   ...
-  "redux-saga": "0.14.3",
-  "reselect": "2.5.4",
-- "sanitize.css": "4.1.0",
-  "styled-components": "1.4.3",
-  ...
+  "reselect": "4.0.0",
+- "sanitize.css": "8.0.0",
+  "styled-components": "4.1.1"
 },
 ```

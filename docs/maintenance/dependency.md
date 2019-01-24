@@ -37,13 +37,13 @@ Confirm/adjust eslint-config-airbnb compatible [dependency versions](https://www
 
 ### Pinned Version Numbers
 
-`react-boilerplate` does not use "^", "~", etc., and these should be removed from `package.json`, if present. See [#598](https://github.com/react-boilerplate/react-boilerplate/issues/598) for more details.
+`react-boilerplate-typescript-apollo` does not use "^", "~", etc., and these should be removed from `package.json`, if present. See [#598](https://github.com/react-boilerplate/react-boilerplate/issues/598) for more details.
 
 At this point, you should copy and paste the version diff from the terminal into your `Update Log`.
 
 ## Correct Errors and Rollback Dependencies
 
-Run `npm install` to install updated versions and then start the example app by running `npm start`. Make sure that the project is running smoothly. If not, track down the dependencies that are causing problems and try to roll them back one by one and check if the example application is running.
+Run `yarn` to install updated versions and then start the example app by running `yarn start`. Make sure that the project is running smoothly. If not, track down the dependencies that are causing problems and try to roll them back one by one and check if the example application is running.
 
 Note down the rolled back dependencies and state the reason in your `Update Log`.
 
@@ -54,7 +54,7 @@ Most of the errors/warnings would go away once you roll back the problemetic dep
 **Example App:**
 
 - `rm -rf node_modules && rm package-lock.json`
-- `npm install && npm start`
+- `yarn && yarn start`
 
 - Browse example app on development server
   - Browse Features page, change language to `de`
@@ -67,22 +67,22 @@ Identify problems that occur and try to resolve them by rolling back the respect
 
 **Internal Commands:**
 
-- `npm run clean` (Be careful, this will commit all your changes.)
-- `npm run generate component` TestComp /w defaults
-- `npm run generate container` TestPage /w defaults
+- `yarn clean` (Be careful, this will commit all your changes.)
+- `yarn generate component` TestComp /w defaults
+- `yarn generate container` TestPage /w defaults
 - Add a new route in the App container:
 
-```js
-import TestPage from 'containers/TestPage/Loadable';
+```ts
+import TestPage from './containers/TestPage/Loadable';
 
 <Route path="/test" component={TestPage} />;
 ```
 
 - Use TestComp on TestPage -> bypass all tests in TestComp and TestPage (set true = true)
-- `npm start` > `localhost:3000/test`
-- `npm test` (expect test failure due to incomplete test coverage)
-- `npm run build`
-- `npm run start:prod` > `localhost:3000/test`
+- `yarnstart` > `localhost:3000/test`
+- `yarntest` (expect test failure due to incomplete test coverage)
+- `yarn build`
+- `yarn start:prod` > `localhost:3000/test`
 
 # Sample Update Log
 

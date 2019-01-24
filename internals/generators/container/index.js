@@ -66,30 +66,45 @@ module.exports = {
     },
   ],
   actions: data => {
-    // Generate index.js and index.test.js
-    var componentTemplate; // eslint-disable-line no-var
+    // Generate index.tsx, types.d.ts and index.test.tsx
+    let componentTemplate;
+    let typeTemplate;
 
     switch (data.type) {
       case 'Stateless Function': {
-        componentTemplate = './container/stateless.js.hbs';
+        componentTemplate = './container/stateless.tsx.hbs';
+        typeTemplate = './container/stateless.types.d.ts.hbs';
         break;
       }
       default: {
-        componentTemplate = './container/class.js.hbs';
+        componentTemplate = './container/class.tsx.hbs';
+        typeTemplate = './container/class.types.d.ts.hbs';
       }
     }
 
     const actions = [
       {
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/index.js',
+        path: '../../app/containers/{{properCase name}}/index.tsx',
+        templateFile: './container/index.ts.hbs',
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: '../../app/containers/{{properCase name}}/parts/{{ properCase name }}.tsx',
         templateFile: componentTemplate,
         abortOnFail: true,
       },
       {
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/tests/index.test.js',
-        templateFile: './container/test.js.hbs',
+        path: '../../app/containers/{{properCase name}}/types.d.ts',
+        templateFile: typeTemplate,
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: '../../app/containers/{{properCase name}}/tests/index.spec.tsx',
+        templateFile: './container/test.tsx.hbs',
         abortOnFail: true,
       },
     ];
@@ -98,63 +113,163 @@ module.exports = {
     if (data.wantMessages) {
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/messages.js',
-        templateFile: './container/messages.js.hbs',
+        path: '../../app/containers/{{properCase name}}/messages.ts',
+        templateFile: './container/messages.ts.hbs',
         abortOnFail: true,
       });
     }
 
-    // If they want actions and a reducer, generate actions.js, constants.js,
+    // If they want actions and a reducer, generate actions.ts, constants.ts,
     // reducer.js and the corresponding tests for actions and the reducer
     if (data.wantActionsAndReducer) {
       // Actions
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/actions.js',
-        templateFile: './container/actions.js.hbs',
+        path: '../../app/containers/{{properCase name}}/store/actions.ts',
+        templateFile: './container/actions.ts.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/tests/actions.test.js',
-        templateFile: './container/actions.test.js.hbs',
+        path: '../../app/containers/{{properCase name}}/store/typings/actions.d.ts',
+        templateFile: './container/actions.d.ts.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../app/containers/{{properCase name}}/tests/actions.spec.ts',
+        templateFile: './container/actions.spec.ts.hbs',
         abortOnFail: true,
       });
 
       // Constants
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/constants.js',
-        templateFile: './container/constants.js.hbs',
+        path: '../../app/containers/{{properCase name}}/store/constants.ts',
+        templateFile: './container/constants.ts.hbs',
         abortOnFail: true,
       });
 
       // Selectors
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/selectors.js',
-        templateFile: './container/selectors.js.hbs',
+        path: '../../app/containers/{{properCase name}}/store/selectors.ts',
+        templateFile: './container/selectors.ts.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
         path:
-          '../../app/containers/{{properCase name}}/tests/selectors.test.js',
-        templateFile: './container/selectors.test.js.hbs',
+          '../../app/containers/{{properCase name}}/tests/selectors.spec.ts',
+        templateFile: './container/selectors.spec.ts.hbs',
         abortOnFail: true,
       });
 
       // Reducer
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/reducer.js',
-        templateFile: './container/reducer.js.hbs',
+        path: '../../app/containers/{{properCase name}}/store/reducer.ts',
+        templateFile: './container/reducer.ts.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/tests/reducer.test.js',
-        templateFile: './container/reducer.test.js.hbs',
+        path: '../../app/containers/{{properCase name}}/store/typings/reducer.d.ts',
+        templateFile: './container/reducer.d.ts.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../app/containers/{{properCase name}}/tests/reducer.spec.ts',
+        templateFile: './container/reducer.spec.ts.hbs',
+        abortOnFail: true,
+      });
+      
+      if (data.test) {
+        // Back up files that will be modified so we can restore them
+        actions.push({
+          type: 'backup',
+          path: '../../app/typings',
+          file: 'store-injected.d.ts',
+        });
+      }
+
+      // Typings
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(export interface MyInjectedReducers {\n([ a-zA-Z?:<>,]*;\n)+)/g,
+        templateFile: './container/injected-reducers.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(export interface MyInjectedReducers) ({}\n)/g,
+        templateFile: './container/injected-reducers-empty.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(export interface MyInjectedSagas {\n([ a-zA-Z?:<>,]*;\n)+)/g,
+        templateFile: './container/injected-sagas.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(export interface MyInjectedSagas) ({}\n)/g,
+        templateFile: './container/injected-sagas-empty.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(export interface MyInjectedReducerState {\n([ a-zA-Z?:<>,]*;\n)+)/g,
+        templateFile: './container/injected-reducer-state.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(export interface MyInjectedReducerState) ({}\n)/g,
+        templateFile: './container/injected-reducer-state-empty.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(import \{ [a-zA-Z]+ \} from '\.\.\/containers\/[a-zA-Z]+\/store\/typings\/reducer';\n)(?!.*import { [a-zA-Z]+ } from '\.\.\/containers\/[a-zA-Z]+\/store\/typings\/reducer';*)/g,
+        templateFile: './container/store-imports.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(import \{ [a-zA-Z]+ \} from '\.\.\/containers\/[a-zA-Z]+\/store\/typings\/actions';\n)(?!.*import { [a-zA-Z]+ } from '\.\.\/containers\/[a-zA-Z]+\/store\/typings\/actions';*)/g,
+        templateFile: './container/action-imports.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /((export type MyInjectedActions =\n)(  \| [A-Za-z]+\n)*(  \| [A-Za-z]+))(;\n)/g,
+        templateFile: './container/action-type-imports.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(export type MyInjectedActions =)( undefined;)/g,
+        templateFile: './container/action-type-imports-undefined.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'modify',
+        path: '../../app/typings/store-injected.d.ts',
+        pattern: /(export type MyInjectedActions =)( ([a-zA-Z]+Actions);)/g,
+        templateFile: './container/action-type-imports-single.hbs',
         abortOnFail: true,
       });
     }
@@ -163,14 +278,14 @@ module.exports = {
     if (data.wantSaga) {
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/saga.js',
-        templateFile: './container/saga.js.hbs',
+        path: '../../app/containers/{{properCase name}}/store/saga.ts',
+        templateFile: './container/saga.ts.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/tests/saga.test.js',
-        templateFile: './container/saga.test.js.hbs',
+        path: '../../app/containers/{{properCase name}}/tests/saga.spec.ts',
+        templateFile: './container/saga.spec.ts.hbs',
         abortOnFail: true,
       });
     }
@@ -178,8 +293,8 @@ module.exports = {
     if (data.wantLoadable) {
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/Loadable.js',
-        templateFile: './component/loadable.js.hbs',
+        path: '../../app/containers/{{properCase name}}/Loadable.ts',
+        templateFile: './component/loadable.ts.hbs',
         abortOnFail: true,
       });
     }
@@ -187,6 +302,11 @@ module.exports = {
     actions.push({
       type: 'prettify',
       path: '/containers/',
+    });
+
+    actions.push({
+      type: 'prettify-dir',
+      path: '/typings/',
     });
 
     return actions;

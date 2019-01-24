@@ -1,0 +1,37 @@
+{{#if wantActionsAndReducer}}
+import { FunctionalComponent } from '../../typings/component';
+{{else}}
+import { BasicFunctionalComponent } from '../../typings/component';
+{{/if}}
+
+/**
+ *
+ * {{ properCase name }} type definitions
+ *
+ */
+
+{{#if wantActionsAndReducer}}
+interface {{ properCase name }}ComponentFn extends FunctionalComponent<{{ properCase name }}Props> {}
+
+export interface {{ properCase name }}Props {}
+
+export interface {{ properCase name }}DispatchProps {}
+
+export interface {{ properCase name }}StateProps {
+  {{ camelCase name }}?: object;
+}
+
+export interface {{ properCase name }}MergedProps
+  extends {{ properCase name }}Props,
+    {{ properCase name }}DispatchProps,
+    {{ properCase name }}StateProps {}
+{{else}}
+interface {{ properCase name }}ComponentFn extends BasicFunctionalComponent {}
+
+// You can use the `FunctionalComponent` interface if you need props for your component:
+// interface {{ properCase name }}ComponentFn extends FunctionalComponent<ComponentProps> {}
+
+// export interface {{ properCase name }}Props {
+//   className?: string;
+// }
+{{/if}}

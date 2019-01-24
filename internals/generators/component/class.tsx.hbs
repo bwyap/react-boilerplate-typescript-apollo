@@ -1,0 +1,31 @@
+/**
+ *
+ * {{ properCase name }}
+ *
+ */
+
+import * as React from 'react';
+// import * as PropTypes from 'prop-types';
+// import styled from 'styled-components';
+import { {{ properCase name }}Props } from '../types';
+
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+import messages from '../messages';
+{{/if}}
+
+class {{ properCase name }} extends {{{ type }}}<{{ properCase name }}Props> {
+  static propTypes = {};
+
+  render() {
+    return (
+      <div>
+        {{#if wantMessages}}
+          <FormattedMessage {...messages.header} />
+        {{/if}}
+      </div>
+    );
+  }
+}
+
+export default {{ properCase name }};
