@@ -110,7 +110,7 @@ module.exports = options => ({
     // inside your code for any environment checks; Terser will automatically
     // drop any unreachable code.
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development',
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
     }),
   ]),
   resolve: {
