@@ -1,22 +1,19 @@
+/**
+ * WARNING: Avoid editing this file manually - especially all comments
+ * and the types prefixed with 'My'. The container generator will modify
+ * this file automatically based on patterns found in this file.
+ */
 import { Store, Action, Reducer } from 'redux';
 import { Saga } from './store';
 
 // Action imports
-import { HomePageActions } from '../containers/HomePage/store/typings/actions';
 
 // Reducer state imports
-import { HomePageReducerState } from '../containers/HomePage/store/typings/reducer';
 
-export interface MyInjectedReducers {
-  home?: Reducer<HomePageReducerState, HomePageActions>;
-}
+export interface MyInjectedReducers {}
 
-export type MyInjectedActions = HomePageActions;
+export type MyInjectedActions = undefined;
 
-export interface MyInjectedSagas {
-  home?: Saga;
-}
+export interface MyInjectedSagas {}
 
-export interface MyInjectedReducerState {
-  home?: HomePageReducerState;
-}
+export interface MyInjectedReducerState {}
