@@ -24,7 +24,7 @@ The webpack `html-loader` does not recognise this as an image file and will not
 transfer the image to the build folder. To get webpack to transfer them, you
 have to import them with the file loader in your JavaScript somewhere, e.g.:
 
-```JavaScript
+```ts
 import 'file?name=[name].[ext]!../img/yourimg.png';
 ```
 
@@ -34,21 +34,21 @@ Then webpack will correctly transfer the image to the build folder.
 
 If you have containers that should be available throughout the app, like a `NavigationBar` (they aren't route specific), you need to add their respective reducers to the root reducer with the help of `combineReducers`.
 
-```js
-// In app/reducers.js
+```ts
+// In app/reducers.ts
 
 ...
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
 ...
 
-import navigationBarReducer from 'containers/NavigationBar/reducer';
+import navigationBarReducer from './containers/NavigationBar/reducer';
 
-export default combineReducers({
-  route: routeReducer,
-  global: globalReducer,
+const rootReducer = combineReducers({
+  app: appReducer,
   language: languageProviderReducer,
+  router: connectRouter(history),
   navigationBar: navigationBarReducer,
-  ...asyncReducers,
+  ...injectedReducers,
 });
 ```
 
@@ -56,7 +56,7 @@ export default combineReducers({
 
 You need to exclude packages which are not intended to be processed by babel. For e.g. Server packages such as 'express' or a CSS file. Just add the package name to `exclude` array in `internals/config.js` and you're all set!
 
-```js
+```ts
 // in internals/config.js
 
 exclude: [
@@ -88,19 +88,20 @@ Remove node_modules
 
 Clear cache
 
-- `npm cache clean`
+- `yarn cache clean`
 
 Re-install dependencies
 
-- `npm install`
+- `yarn`
 
 Build project
 
-- `npm run build`
+- `yarn build`
 
 ## Cleaning up Jest cache
 
-By default, Jest caches transformed modules, which may lead to faulty coverage reports. To prevent this, you'll have to clear the cache by running `npm run test -- --no-cache` as pointed out in [Jest docs](https://facebook.github.io/jest/docs/cli.html#cache)
+By default, Jest caches transformed modules, which may lead to faulty coverage reports.
+To prevent this, you'll have to clear the cache by running `yarn test --no-cache` as pointed out in [Jest docs](https://facebook.github.io/jest/docs/cli.html#cache)
 
 ## Using short_name in Web App manifest
 
