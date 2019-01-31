@@ -33,6 +33,22 @@ describe('<ReposList />', () => {
             id: '3W9NClLDhTHyRmy8ZLfoJf',
             name: 'Freedom Child',
           },
+          {
+            id: '2XNbejl6LdiFOz3vzwLjYZ',
+            name: 'No Sound Without Silence',
+          },
+        ],
+      },
+      {
+        id: '3QFglG0L4o9G8V6sxF0x6n',
+        name: 'The Post Script',
+        image:
+          'https://i.scdn.co/image/da637b3079e232738d34ba6663a1d61f68e8dfb0',
+        albums: [
+          {
+            id: '3AVQlfutRGsGUXgNssvGdT',
+            name: 'Seasons Change',
+          },
         ],
       },
     ];
