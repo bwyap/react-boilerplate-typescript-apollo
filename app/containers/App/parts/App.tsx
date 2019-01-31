@@ -13,11 +13,7 @@ import { Switch, Route } from 'react-router-dom';
 import { connect, MapStateToProps } from 'react-redux';
 
 import HomePage from '../../../containers/HomePage/Loadable';
-import FeaturePage from '../../../containers/FeaturePage/Loadable';
 import NotFoundPage from '../../../containers/NotFoundPage/Loadable';
-
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
 
 import GlobalStyle from '../../../global-styles';
 
@@ -47,13 +43,10 @@ export class App extends React.PureComponent<AppMergedProps> {
             content="A React.js Boilerplate application"
           />
         </Helmet>
-        <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/features" component={FeaturePage} />
           <Route path="" component={NotFoundPage} />
         </Switch>
-        <Footer />
         <GlobalStyle />
       </AppWrapper>
     );

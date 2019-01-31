@@ -13,32 +13,10 @@ import { AppActionType } from '../constants';
 
 // Actions
 
-export type AppActions =
-  | LoadReposAction
-  | ReposLoadedAction
-  | RepoLoadingErrorAction;
+export type AppActions = DefaultAction;
 
-export interface LoadReposAction extends Action<AppActionType> {
-  type: AppActionType.LOAD_REPOS;
-}
-
-export interface ReposLoadedAction extends Action<AppActionType> {
-  type: AppActionType.LOAD_REPOS_SUCCESS;
-  payload: ReposLoadedActionPayload;
-}
-
-export interface RepoLoadingErrorAction extends Action<AppActionType> {
-  type: AppActionType.LOAD_REPOS_ERROR;
-  payload: RepoLoadingErrorActionPayload;
+export interface DefaultAction extends Action<AppActionType> {
+  type: AppActionType.DEFAULT_ACTION;
 }
 
 // Action payloads
-
-export interface ReposLoadedActionPayload {
-  username: string;
-  repos: any[];
-}
-
-export interface RepoLoadingErrorActionPayload {
-  error: any;
-}

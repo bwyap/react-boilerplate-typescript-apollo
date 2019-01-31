@@ -17,6 +17,9 @@ import * as FontFaceObserver from 'fontfaceobserver';
 import history from './utils/history';
 import 'sanitize.css/sanitize.css';
 
+// Import root app
+import App from './containers/App';
+
 // // Import Language Provider
 import LanguageProvider from './containers/LanguageProvider';
 
@@ -47,8 +50,7 @@ const initialState = {};
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 
-const render = async messages => {
-  const App = (await import('./containers/App')).default;
+const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
       <LanguageProvider messages={messages}>
@@ -65,19 +67,17 @@ if (module.hot) {
   // Hot reloadable React components and translation json files
   // modules.hot.accept does not accept dynamic dependencies,
   // have to be constants at compile-time
-  module.hot.accept(['./i18n', 'containers/App'], async () => {
+  module.hot.accept(['./i18n', './containers/App'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-    render(translationMessages)
-      // tslint:disable-next-line
-      .catch(console.error);
+    render(translationMessages);
   });
 }
 
 // Chunked polyfill for browsers without Intl support
 if (!(window as any).Intl) {
+  // prettier-ignore
   const translations = [
     'intl/locale-data/jsonp/en.js',
-    'intl/locale-data/jsonp/de.js',
   ];
   new Promise(resolve => {
     resolve(import('intl'));
@@ -88,9 +88,7 @@ if (!(window as any).Intl) {
       throw err;
     });
 } else {
-  render(translationMessages)
-    // tslint:disable-next-line
-    .catch(console.error);
+  render(translationMessages);
 }
 
 // Install ServiceWorker and AppCache in the end since

@@ -1,23 +1,13 @@
 import produce from 'immer';
 
+import { AppReducerState } from '../store/typings/reducer';
 import appReducer from '../store/reducer';
-import {
-  createLoadReposAction,
-  createReposLoadedAction,
-  createRepoLoadingErrorAction,
-} from '../store/actions';
+import { createDefaultAction } from '../store/actions';
 
 describe('appReducer', () => {
-  let state;
+  let state: AppReducerState;
   beforeEach(() => {
-    state = {
-      loading: false,
-      error: null,
-      currentUser: null,
-      userData: {
-        repositories: null,
-      },
-    };
+    state = {};
   });
 
   it('should return the initial state', () => {
@@ -25,51 +15,10 @@ describe('appReducer', () => {
     expect(appReducer(undefined, {} as any)).toEqual(expectedResult);
   });
 
-  it('should handle the loadRepos action correctly', () => {
+  it('should handle DefaultAction action correctly', () => {
     const expectedResult = produce(state, draft => {
-      draft.loading = true;
-      draft.error = null;
-      draft.userData.repositories = null;
+      // Modify draft here
     });
-
-    expect(appReducer(state, createLoadReposAction())).toEqual(expectedResult);
-  });
-
-  it('should handle the reposLoaded action correctly', () => {
-    const fixture = [
-      {
-        name: 'My Repo',
-      },
-    ];
-    const username = 'test';
-    const expectedResult = produce(state, draft => {
-      draft.userData.repositories = fixture;
-      draft.loading = false;
-      draft.currentUser = username;
-    });
-
-    expect(
-      appReducer(
-        state,
-        createReposLoadedAction({
-          repos: fixture,
-          username,
-        }),
-      ),
-    ).toEqual(expectedResult);
-  });
-
-  it('should handle the repoLoadingError action correctly', () => {
-    const fixture = {
-      msg: 'Not found',
-    };
-    const expectedResult = produce(state, draft => {
-      draft.error = fixture;
-      draft.loading = false;
-    });
-
-    expect(
-      appReducer(state, createRepoLoadingErrorAction({ error: fixture })),
-    ).toEqual(expectedResult);
+    expect(appReducer(state, createDefaultAction())).toEqual(expectedResult);
   });
 });

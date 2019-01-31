@@ -8,38 +8,18 @@
  */
 
 import produce from 'immer';
-import { AppActionType } from './constants';
 import { AppReducerState, AppReducerFn } from './typings/reducer';
-import { ReposLoadedAction, RepoLoadingErrorAction } from './typings/actions';
+import { AppActionType } from './constants';
 
 // The initial state of the App
-export const initialState: AppReducerState = {
-  loading: false,
-  error: null,
-  currentUser: null,
-  userData: {
-    repositories: null,
-  },
-};
+export const initialState: AppReducerState = {};
 
 const appReducer: AppReducerFn = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
-      case AppActionType.LOAD_REPOS:
-        draft.loading = true;
-        draft.error = null;
-        draft.userData.repositories = null;
+      case AppActionType.DEFAULT_ACTION:
         break;
-
-      case AppActionType.LOAD_REPOS_SUCCESS:
-        draft.userData.repositories = (action as ReposLoadedAction).payload.repos;
-        draft.loading = false;
-        draft.currentUser = (action as ReposLoadedAction).payload.username;
-        break;
-
-      case AppActionType.LOAD_REPOS_ERROR:
-        draft.error = (action as RepoLoadingErrorAction).payload.error;
-        draft.loading = false;
+      default:
         break;
     }
   });

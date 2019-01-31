@@ -2,7 +2,6 @@
  * Test the request function
  */
 
-// tslint:disable:no-import-side-effect
 import 'whatwg-fetch';
 import request from '../request';
 

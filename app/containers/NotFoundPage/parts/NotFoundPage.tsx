@@ -7,16 +7,16 @@
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import H1 from '../../../components/H1';
 import messages from '../messages';
-import { NotFoundPageComponentFn } from '../types';
 
-const NotFound: NotFoundPageComponentFn = () => (
-  <article>
-    <H1>
-      <FormattedMessage {...messages.header} />
-    </H1>
-  </article>
-);
+class NotFoundPage extends React.PureComponent {
+  render = () => (
+    <div>
+      <h1>
+        <FormattedMessage {...messages.header} />
+      </h1>
+    </div>
+  );
+}
 
-export default NotFound;
+export default NotFoundPage;

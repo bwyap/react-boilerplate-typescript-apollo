@@ -13,30 +13,6 @@ const selectApp: Selector<MyReducerState, AppReducerState> = state => state.app;
 const selectRouter: Selector<MyReducerState, RouterState> = state =>
   state.router;
 
-const makeSelectCurrentUser = () =>
-  createSelector<MyReducerState, AppReducerState, string>(
-    selectApp,
-    state => state.currentUser,
-  );
-
-const makeSelectLoading = () =>
-  createSelector<MyReducerState, AppReducerState, boolean>(
-    selectApp,
-    state => state.loading,
-  );
-
-const makeSelectError = () =>
-  createSelector<MyReducerState, AppReducerState, any>(
-    selectApp,
-    state => state.error,
-  );
-
-const makeSelectRepos = () =>
-  createSelector<MyReducerState, AppReducerState, any[]>(
-    selectApp,
-    state => state.userData.repositories,
-  );
-
 const makeSelectLocation = () =>
   createSelector<MyReducerState, RouterState, Location>(
     selectRouter,
@@ -49,12 +25,4 @@ const makeSelectLocationPathname = () =>
     locationState => locationState.pathname,
   );
 
-export {
-  selectApp,
-  makeSelectCurrentUser,
-  makeSelectLoading,
-  makeSelectError,
-  makeSelectRepos,
-  makeSelectLocation,
-  makeSelectLocationPathname,
-};
+export { selectApp, makeSelectLocation, makeSelectLocationPathname };

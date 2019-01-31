@@ -3,7 +3,6 @@ import { SagaIterator } from 'redux-saga';
 import { RouterState as RouterReducerState } from 'connected-react-router';
 
 import { AppActionType } from '../containers/App/store/constants';
-import { HomePageActionType } from '../containers/HomePage/store/constants';
 import { LanguageProviderActionType } from '../containers/LanguageProvider/store/constants';
 import { AppActions } from '../containers/App/store/typings/actions';
 import { LanguageProviderActions } from '../containers/LanguageProvider/store/typings/actions';

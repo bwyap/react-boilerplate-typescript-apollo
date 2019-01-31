@@ -11,11 +11,4 @@ import { AppActionType } from '../constants';
 export interface AppReducerFn
   extends ComponentReducerFn<AppReducerState, AppActionType> {}
 
-export interface AppReducerState {
-  loading: boolean;
-  error: any;
-  currentUser: string;
-  userData: {
-    repositories: any[];
-  };
-}
+export interface AppReducerState {}

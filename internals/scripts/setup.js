@@ -208,7 +208,7 @@ function installPackages() {
       interval = animateProgress('Installing dependencies');
     }, 500);
 
-    exec('npm install', err => {
+    exec('yarn', err => {
       if (err) {
         reject(new Error(err));
       }
