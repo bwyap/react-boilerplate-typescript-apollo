@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ReposList /> should render the loading indicator when its loading 1`] = `
+<div
+  class="sc-bwzfXH bycCir"
+>
+  <ul
+    class="sc-bdVaJa kjaCOS"
+  >
+    <div
+      class="sc-ifAKCX jcAqoe"
+      data-testid="loading"
+    >
+      <div
+        class="sc-EHOje jorIkb"
+      />
+      <div
+        class="sc-bZQynM cCfJFf"
+      />
+      <div
+        class="sc-gzVnrw gnryHA"
+      />
+      <div
+        class="sc-htoDjs jRhOQV"
+      />
+      <div
+        class="sc-dnqmqq bVoquB"
+      />
+      <div
+        class="sc-iwsKbI bEwLhw"
+      />
+      <div
+        class="sc-gZMcBi gVTMMN"
+      />
+      <div
+        class="sc-gqjmRU hqbrcO"
+      />
+      <div
+        class="sc-VigVT bjQYpr"
+      />
+      <div
+        class="sc-jTzLTM jAgAmf"
+      />
+      <div
+        class="sc-fjdhpX gAXUfu"
+      />
+      <div
+        class="sc-jzJRlG bsUthD"
+      />
+    </div>
+  </ul>
+</div>
+`;
+
+exports[`<ReposList /> should render the repositories if loading was successful 1`] = `
+<div
+  class="sc-bwzfXH bycCir"
+>
+  <ul
+    class="sc-bdVaJa kjaCOS"
+  >
+    <li
+      class="sc-bxivhb cHNIkg"
+    >
+      <div
+        class="sc-htpNat cdjzok"
+      >
+        The Script
+         (
+        1
+         album
+        
+        )
+      </div>
+    </li>
+  </ul>
+</div>
+`;

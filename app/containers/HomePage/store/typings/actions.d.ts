@@ -20,8 +20,17 @@ export interface ChangeUsernameAction extends Action<HomePageActionType> {
   payload: ChangeUsernameActionPayload;
 }
 
+export interface ChangeSearchAction extends Action<HomePageActionType> {
+  type: HomePageActionType.CHANGE_SEARCH;
+  payload: ChangeSearchActionPayload;
+}
+
 // Action payloads
 
 export interface ChangeUsernameActionPayload {
   username: string;
+}
+
+export interface ChangeSearchActionPayload {
+  search: string;
 }

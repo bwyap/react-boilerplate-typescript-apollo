@@ -5,7 +5,7 @@ import Wrapper from './Wrapper';
 import { LoadingIndicatorComponentFn } from '../types';
 
 const LoadingIndicator: LoadingIndicatorComponentFn = () => (
-  <Wrapper>
+  <Wrapper data-testid="loading">
     <Circle />
     <Circle rotate={30} delay={-1.1} />
     <Circle rotate={60} delay={-1} />
