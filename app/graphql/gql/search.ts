@@ -1,3 +1,7 @@
+/**
+ * Define your GraphQL operations here.
+ */
+
 import { gql } from 'apollo-boost';
 
 export const SearchArtists = gql`

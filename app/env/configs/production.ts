@@ -1,8 +1,7 @@
 import { EnvironmentVariables } from '../types';
 
 const e: EnvironmentVariables = {
-  // TODO: Add production API URL
-  api: 'https://localhost',
+  api: null,
   example: 'https://spotify-graphql-server.herokuapp.com',
 };
 

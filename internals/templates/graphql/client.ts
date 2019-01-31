@@ -10,7 +10,7 @@ export default async (store: MyReduxStore) => {
   const env = await loadEnvironment();
 
   const config: PresetConfig = {
-    uri: `${env.example}/graphql`,
+    uri: `${env.api}/graphql`,
     fetchOptions: {
       headers: {
         // Add authorization to each request here

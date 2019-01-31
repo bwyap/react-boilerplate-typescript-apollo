@@ -52,6 +52,7 @@ import { translationMessages } from './i18n';
   const store = configureStore(initialState, history);
   const MOUNT_NODE = document.getElementById('app');
 
+  // Create Apollo client
   const client = await generateClient(store);
 
   const render = async messages => {
