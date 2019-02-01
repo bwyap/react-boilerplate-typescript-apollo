@@ -1,5 +1,30 @@
 # Changelog
 
+## 3.7 Feb 2019
+
+## News
+
+This is the first release of the Typescript port of react-boilerplate with Apollo Client integration.
+
+### Main
+
+- **Apollo client integration**
+  - with tests and examples of how to use
+- **Typescript integration**
+  - all app components and tests are now written in Typescript with all required typings
+  - all generators and templates are now written in Typescript
+- [react-testing-library](https://github.com/kentcdodds/react-testing-library) (@Mensae)
+  - replaces [enzyme](https://github.com/airbnb/enzyme)
+- [Immer](https://github.com/mweststrate/immer) (@julianben)
+  - replaces [Immutable.js](https://facebook.github.io/immutable-js/)
+- [Commit linting](https://github.com/marionebl/commitlint) to enforce consistent commit message style
+  - done with [husky](https://github.com/typicode/husky)
+- Prefer [yarn](https://yarnpkg.com)
+  - by providing a `yarn.lock` file
+  - scripts converted to use `yarn`
+
+---
+
 ## 3.6 June 2018
 
 ## News
