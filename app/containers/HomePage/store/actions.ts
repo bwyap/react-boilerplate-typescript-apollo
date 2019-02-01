@@ -20,19 +20,36 @@ import { ActionCreator } from '../../../typings/store';
 import {
   ChangeUsernameAction,
   ChangeUsernameActionPayload,
+  ChangeSearchAction,
+  ChangeSearchActionPayload,
 } from './typings/actions';
 
 /**
  * Changes the input field of the form
  *
- * @param  {name} name The new text of the input field
+ * @param  {{ username: string }} name The new text of the input field
  *
- * @return {object}    An action object with a type of CHANGE_USERNAME
+ * @return {object} An action object with a type of CHANGE_USERNAME
  */
 export const createChangeUsernameAction: ActionCreator<
   ChangeUsernameAction,
   ChangeUsernameActionPayload
 > = payload => ({
   type: HomePageActionType.CHANGE_USERNAME,
+  payload,
+});
+
+/**
+ * Changes the input field of the form
+ *
+ * @param  {{ search: string }} search The new text of the input field
+ *
+ * @return {object} An action object with a type of CHANGE_SEARCH
+ */
+export const createChangeSearchAction: ActionCreator<
+  ChangeSearchAction,
+  ChangeSearchActionPayload
+> = payload => ({
+  type: HomePageActionType.CHANGE_SEARCH,
   payload,
 });

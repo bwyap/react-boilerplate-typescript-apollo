@@ -1,9 +1,14 @@
 import { HomePageActionType } from '../store/constants';
 
-import { createChangeUsernameAction } from '../store/actions';
+import {
+  createChangeUsernameAction,
+  createChangeSearchAction,
+} from '../store/actions';
 import {
   ChangeUsernameAction,
   ChangeUsernameActionPayload,
+  ChangeSearchAction,
+  ChangeSearchActionPayload,
 } from '../store/typings/actions';
 
 describe('Home Actions', () => {
@@ -20,6 +25,22 @@ describe('Home Actions', () => {
       };
 
       expect(createChangeUsernameAction(fixture)).toEqual(expectedResult);
+    });
+  });
+
+  describe('changeSearch', () => {
+    it('should return the correct type and the passed search', () => {
+      const fixture: ChangeSearchActionPayload = {
+        search: 'Max',
+      };
+      const expectedResult: ChangeSearchAction = {
+        type: HomePageActionType.CHANGE_SEARCH,
+        payload: {
+          search: 'Max',
+        },
+      };
+
+      expect(createChangeSearchAction(fixture)).toEqual(expectedResult);
     });
   });
 });
