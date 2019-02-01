@@ -6,7 +6,7 @@ import { createSelector, Selector } from 'reselect';
 import { MyReducerState } from '../../../typings/store';
 import { AppReducerState } from './typings/reducer';
 import { RouterState } from 'connected-react-router';
-import { Location } from 'history';
+import { Location, Pathname } from 'history';
 
 const selectApp: Selector<MyReducerState, AppReducerState> = state => state.app;
 
@@ -19,4 +19,10 @@ const makeSelectLocation = () =>
     routerState => routerState.location,
   );
 
-export { selectApp, makeSelectLocation };
+const makeSelectLocationPathname = () =>
+  createSelector<MyReducerState, Location, Pathname>(
+    makeSelectLocation(),
+    locationState => locationState.pathname,
+  );
+
+export { selectApp, makeSelectLocation, makeSelectLocationPathname };

@@ -10,11 +10,12 @@
 import produce from 'immer';
 import { HomePageActionType } from './constants';
 import { HomePageReducerState, HomePageReducerFn } from './typings/reducer';
-import { ChangeUsernameAction } from './typings/actions';
+import { ChangeUsernameAction, ChangeSearchAction } from './typings/actions';
 
 // The initial state of the App
 export const initialState: HomePageReducerState = {
   username: '',
+  search: '',
 };
 
 const homeReducer: HomePageReducerFn = (state = initialState, action) =>
@@ -26,6 +27,9 @@ const homeReducer: HomePageReducerFn = (state = initialState, action) =>
           /@/gi,
           '',
         );
+        break;
+      case HomePageActionType.CHANGE_SEARCH:
+        draft.search = (action as ChangeSearchAction).payload.search;
         break;
     }
   });

@@ -19,7 +19,7 @@ export default defineMessages({
   },
   trymeHeader: {
     id: `${scope}.tryme.header`,
-    defaultMessage: 'Try me!',
+    defaultMessage: 'Try Redux!',
   },
   trymeMessage: {
     id: `${scope}.tryme.message`,
@@ -28,5 +28,13 @@ export default defineMessages({
   trymeAtPrefix: {
     id: `${scope}.tryme.atPrefix`,
     defaultMessage: '@',
+  },
+  trymeSearchHeader: {
+    id: `${scope}.trymeSearch.header`,
+    defaultMessage: 'Try GraphQL!',
+  },
+  trymeSearchMessage: {
+    id: `${scope}.trymeSearch.message`,
+    defaultMessage: 'Search Spotify artists',
   },
 });

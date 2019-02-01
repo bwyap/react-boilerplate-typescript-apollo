@@ -21,6 +21,14 @@ shell.mv('internals/templates/components', 'app');
 shell.rm('-rf', 'app/containers');
 shell.mv('internals/templates/containers', 'app');
 
+// Handle env/
+shell.rm('-rf', 'app/env');
+shell.mv('internals/templates/env', 'app');
+
+// Handle graphql/
+shell.rm('-rf', 'app/graphql');
+shell.mv('internals/templates/graphql', 'app');
+
 // Handle tests/
 shell.mv('internals/templates/tests', 'app');
 

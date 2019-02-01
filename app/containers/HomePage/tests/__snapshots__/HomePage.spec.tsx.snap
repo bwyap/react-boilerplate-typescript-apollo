@@ -1,5 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<HomePage /> search spotify should show data when the search query is done 1`] = `
+<article>
+  <div>
+    <section
+      class="sc-VigVT bCueft"
+    >
+      <h2
+        class="sc-bdVaJa dAIgSr"
+      >
+        <span>
+          Start your next react project in seconds
+        </span>
+      </h2>
+      <p>
+        <span>
+          A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices
+        </span>
+      </p>
+    </section>
+    <section
+      class="sc-gqjmRU fgHQxZ"
+    >
+      <h2
+        class="sc-bdVaJa dAIgSr"
+      >
+        <span>
+          Try Redux!
+        </span>
+      </h2>
+      <form
+        class="sc-jTzLTM fzeZHJ"
+      >
+        <label
+          for="username"
+        >
+          <span>
+            Show Github repositories by
+          </span>
+          <span
+            class="sc-gZMcBi gIzYNa"
+          >
+            <span>
+              @
+            </span>
+          </span>
+          <input
+            class="sc-fjdhpX bmAVzu"
+            id="username"
+            placeholder="mxstbr"
+            type="text"
+            value=""
+          />
+        </label>
+      </form>
+    </section>
+    <section
+      class="sc-gqjmRU fgHQxZ"
+    >
+      <h2
+        class="sc-bdVaJa dAIgSr"
+      >
+        <span>
+          Try GraphQL!
+        </span>
+      </h2>
+      <form
+        class="sc-jTzLTM fzeZHJ"
+      >
+        <label
+          for="search"
+        >
+          <span>
+            Search Spotify artists
+          </span>
+          : 
+          <input
+            class="sc-fjdhpX bmAVzu"
+            id="search"
+            placeholder="the script"
+            type="text"
+            value="hello"
+          />
+        </label>
+      </form>
+      <div
+        class="sc-htpNat bnclQV"
+      >
+        <ul
+          class="sc-bwzfXH bypwNT"
+        >
+          <li
+            class="sc-ifAKCX krZdjN"
+          >
+            <div
+              class="sc-bxivhb kteepi"
+            >
+              hello
+               (
+              1
+               album
+              
+              )
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</article>
+`;
+
 exports[`<HomePage /> should render and match the snapshot 1`] = `
 <article>
   <div>
@@ -26,7 +137,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
         class="sc-bdVaJa dAIgSr"
       >
         <span>
-          Try me!
+          Try Redux!
         </span>
       </h2>
       <form
@@ -61,6 +172,36 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="sc-bwzfXH bypwNT"
         />
       </div>
+    </section>
+    <section
+      class="sc-gqjmRU fgHQxZ"
+    >
+      <h2
+        class="sc-bdVaJa dAIgSr"
+      >
+        <span>
+          Try GraphQL!
+        </span>
+      </h2>
+      <form
+        class="sc-jTzLTM fzeZHJ"
+      >
+        <label
+          for="search"
+        >
+          <span>
+            Search Spotify artists
+          </span>
+          : 
+          <input
+            class="sc-fjdhpX bmAVzu"
+            id="search"
+            placeholder="the script"
+            type="text"
+            value=""
+          />
+        </label>
+      </form>
     </section>
   </div>
 </article>

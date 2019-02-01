@@ -10,13 +10,16 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
+import { connect, MapStateToProps } from 'react-redux';
 
 import HomePage from '../../../containers/HomePage/Loadable';
 import NotFoundPage from '../../../containers/NotFoundPage/Loadable';
 
 import GlobalStyle from '../../../global-styles';
 
-import { AppProps } from '../types';
+import { AppMergedProps, AppStateProps, AppProps } from '../types';
+import { MyReducerState } from '../../../typings/store';
+import { makeSelectLocationPathname } from '../store/selectors';
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
@@ -27,7 +30,7 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
-class App extends React.PureComponent<AppProps> {
+export class App extends React.PureComponent<AppMergedProps> {
   render() {
     return (
       <AppWrapper>
@@ -50,4 +53,13 @@ class App extends React.PureComponent<AppProps> {
   }
 }
 
-export default App;
+export const mapStateToProps: MapStateToProps<
+  AppStateProps,
+  AppProps,
+  MyReducerState
+> = state => ({
+  // We need to map this prop to the component to ensure that routing updates the app
+  pathname: makeSelectLocationPathname()(state),
+});
+
+export default connect(mapStateToProps)(App);

@@ -11,4 +11,5 @@
 
 export enum HomePageActionType {
   CHANGE_USERNAME = 'boilerplate/Home/CHANGE_USERNAME',
+  CHANGE_SEARCH = 'boilerplate/Home/CHANGE_SEARCH',
 }

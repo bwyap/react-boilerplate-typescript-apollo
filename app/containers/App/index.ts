@@ -1,3 +1,4 @@
-import App from './parts/App';
+import ConnectedApp, { App, mapStateToProps } from './parts/App';
 
-export default App;
+export default ConnectedApp;
+export { App, mapStateToProps };

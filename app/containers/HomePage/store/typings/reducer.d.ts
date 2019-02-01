@@ -13,4 +13,5 @@ export interface HomePageReducerFn
 
 export interface HomePageReducerState {
   username: string;
+  search: string;
 }

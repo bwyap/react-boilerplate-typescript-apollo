@@ -71,7 +71,7 @@ Currently up to date with **React-Boilerplate** v3.7.0.
 
 #### New in `react-boilerplate-typescript-apollo`
 
-- [ ] Apollo client integration
+- [x] Apollo client integration
 - [x] Typescript integration
 - [x] [react-testing-library](https://github.com/kentcdodds/react-testing-library) replaces [enzyme](https://github.com/airbnb/enzyme) (by @Mensae)
 - [x] [Immer](https://github.com/mweststrate/immer) replaces [Immutable.js](https://facebook.github.io/immutable-js/) (by @julianben)

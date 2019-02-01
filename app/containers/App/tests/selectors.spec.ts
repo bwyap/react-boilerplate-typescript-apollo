@@ -5,6 +5,7 @@ import {
   makeSelectError,
   makeSelectRepos,
   makeSelectLocation,
+  makeSelectLocationPathname,
 } from '../store/selectors';
 
 describe('selectGlobal', () => {
@@ -81,5 +82,20 @@ describe('makeSelectLocation', () => {
       router,
     };
     expect(locationStateSelector(mockedState as any)).toEqual(router.location);
+  });
+});
+
+describe('makeSelectLocationPathname', () => {
+  const locationPathnameStateSelector = makeSelectLocationPathname();
+  it('should select the location pathname', () => {
+    const router = {
+      location: { pathname: '/foo' },
+    };
+    const mockedState = {
+      router,
+    };
+    expect(locationPathnameStateSelector(mockedState as any)).toEqual(
+      router.location.pathname,
+    );
   });
 });
