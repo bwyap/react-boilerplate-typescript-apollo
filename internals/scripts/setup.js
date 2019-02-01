@@ -200,20 +200,21 @@ function checkNpmVersion(minimalNpmVersion) {
 function installPackages() {
   return new Promise((resolve, reject) => {
     process.stdout.write(
-      '\nInstalling dependencies... (This might take a while)',
+      '\n   Installing dependencies... (This might take a while)',
     );
 
     setTimeout(() => {
       readline.cursorTo(process.stdout, 0);
-      interval = animateProgress('Installing dependencies');
+      interval = animateProgress('   Installing dependencies');
     }, 500);
 
-    exec('npm install', err => {
+    exec('yarn', err => {
       if (err) {
         reject(new Error(err));
       }
 
       clearInterval(interval);
+      readline.cursorTo(process.stdout, 0);
       addCheckMark();
       resolve('Packages installed');
     });
