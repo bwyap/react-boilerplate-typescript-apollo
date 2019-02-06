@@ -46,10 +46,6 @@
   <a href="https://ci.appveyor.com/project/bwyap/react-boilerplate-typescript-apollo">
     <img src="https://ci.appveyor.com/api/projects/status/bx1ukbj359gbeshl?svg=true" alt="Build status (Appveyor)" />
   </a>
-  <!-- Build Status - CircleCI -->
-  <!-- <a href="https://circleci.com/gh/bwyap/react-boilerplate-typescript-apollo">
-    <img src="https://img.shields.io/circleci/project/github/bwyap/react-boilerplate-typescript-apollo.svg?logo=CircleCI" alt="Build status (Circle CI)" />
-  </a> -->
   <!-- Deploy Status - Netlify -->
   <a href="https://app.netlify.com/sites/react-boilerplate-typescript-apollo/deploys">
     <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://api.netlify.com/api/v1/sites/react-boilerplate-typescript-apollo.netlify.com/deploys&label=deploy&query=$[0].state&colorB=blue" alt="Deploy status (Netlify)" />
