@@ -8,6 +8,7 @@
     "lib": ["dom", "es6", "es2015", "es2017"],
     "jsx": "react",
     "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "*": ["node_modules/*"]
     }
