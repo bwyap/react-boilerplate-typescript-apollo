@@ -46,11 +46,16 @@ export interface ActionCreator<Action, Payload> {
   (payload: Payload): Action;
 }
 
-export interface MyReduxStore extends Store<MyReducerState, MyReducerActions> {
+export interface MyReduxStoreExtensions {
   injectedReducers: MyInjectedReducers;
   injectedSagas: MyInjectedSagas;
-  runSaga(saga: Saga, args: object): any; // TODO:
+  runSaga(saga: Saga, args: object): any;
+  createReducer(injectedReducers?: MyInjectedReducers): Reducer;
 }
+
+export interface MyReduxStore
+  extends Store<MyReducerState, MyReducerActions>,
+    MyReduxStoreExtensions {}
 
 export type MyBaseActions = AppActions | LanguageProviderActions;
 

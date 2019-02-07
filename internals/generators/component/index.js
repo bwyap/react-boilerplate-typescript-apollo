@@ -2,8 +2,6 @@
  * Component Generator
  */
 
-/* eslint strict: ["off"] */
-
 'use strict';
 
 const componentExists = require('../utils/componentExists');
@@ -15,9 +13,9 @@ module.exports = {
       type: 'list',
       name: 'type',
       message: 'Select the type of component',
-      default: 'Stateless Function',
+      default: 'React.PureComponent',
       choices: () => [
-        'Stateless Function',
+        // 'Stateless Function', // do not use stateless functions
         'React.PureComponent',
         'React.Component',
       ],
@@ -68,33 +66,48 @@ module.exports = {
     }
 
     const actions = [
-      {
-        type: 'add',
-        path: '../../app/components/{{properCase name}}/parts/{{properCase name}}.tsx',
-        templateFile: componentTemplate,
-        abortOnFail: true,
-      },
-      {
-        type: 'add',
-        path: '../../app/components/{{properCase name}}/types.d.ts',
-        templateFile: typeTemplate,
-        abortOnFail: true,
-      },
+      // Create the index file
       {
         type: 'add',
         path: '../../app/components/{{properCase name}}/index.ts',
         templateFile: './component/index.ts.hbs',
         abortOnFail: true,
       },
+
+      // Create the base component in the /parts directory
+      {
+        type: 'add',
+        path: '../../app/components/{{properCase name}}/parts/{{properCase name}}.tsx',
+        templateFile: componentTemplate,
+        abortOnFail: true,
+      },
+
+      // Create component typings
+      {
+        type: 'add',
+        path: '../../app/components/{{properCase name}}/types.d.ts',
+        templateFile: typeTemplate,
+        abortOnFail: true,
+      },
+
+      // Create component tests
       {
         type: 'add',
         path: '../../app/components/{{properCase name}}/tests/index.spec.tsx',
         templateFile: './component/test.tsx.hbs',
         abortOnFail: true,
+      },
+
+      // Create component stories
+      {
+        type: 'add',
+        path: '../../app/components/{{properCase name}}/stories/{{ properCase name }}.stories.tsx',
+        templateFile: './component/stories.tsx.hbs',
+        abortOnFail: true,
       }
     ];
 
-    // If they want a i18n messages file
+    // If component requires i18n messages
     if (data.wantMessages) {
       actions.push({
         type: 'add',
@@ -104,7 +117,7 @@ module.exports = {
       });
     }
 
-    // If want Loadable.js to load the component asynchronously
+    // If component requires Loadable.js to load the component asynchronously
     if (data.wantLoadable) {
       actions.push({
         type: 'add',
@@ -114,6 +127,7 @@ module.exports = {
       });
     }
 
+    // Prettify
     actions.push({
       type: 'prettify',
       path: '/components/',

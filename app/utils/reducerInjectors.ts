@@ -2,7 +2,6 @@ import * as invariant from 'invariant';
 import { isString, isEmpty, isFunction } from 'lodash';
 
 import checkStore from './checkStore';
-import createReducer from '../reducers';
 import { Reducer } from 'redux';
 import { MyReduxStore } from '../typings/store';
 import {
@@ -33,7 +32,7 @@ const injectReducerFactory: InjectReducerFactory = (
     }
 
     store.injectedReducers[key] = reducer;
-    store.replaceReducer(createReducer(store.injectedReducers));
+    store.replaceReducer(store.createReducer(store.injectedReducers));
   };
   return injectReducer;
 };

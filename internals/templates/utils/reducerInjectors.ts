@@ -33,7 +33,7 @@ const injectReducerFactory: InjectReducerFactory = (
     }
 
     store.injectedReducers[key] = reducer;
-    store.replaceReducer(createReducer(store.injectedReducers));
+    store.replaceReducer(store.createReducer(store.injectedReducers));
   };
   return injectReducer;
 };

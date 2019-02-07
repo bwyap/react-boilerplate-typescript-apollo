@@ -30,7 +30,7 @@ describe('reducer injectors', () => {
 
   describe('getInjectors', () => {
     beforeEach(() => {
-      store = configureStore({}, createMemoryHistory());
+      store = configureStore({}, createMemoryHistory()).store;
     });
 
     it('should return injectors', () => {
@@ -50,7 +50,7 @@ describe('reducer injectors', () => {
 
   describe('injectReducer helper', () => {
     beforeEach(() => {
-      store = configureStore({}, createMemoryHistory());
+      store = configureStore({}, createMemoryHistory()).store;
       injectReducer = injectReducerFactory(store, true);
     });
 

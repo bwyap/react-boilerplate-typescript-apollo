@@ -11,7 +11,7 @@ describe('<Footer />', () => {
   let store;
 
   beforeAll(() => {
-    store = configureStore({}, createBrowserHistory());
+    store = configureStore({}, createBrowserHistory()).store;
   });
 
   it('should render and match the snapshot', () => {

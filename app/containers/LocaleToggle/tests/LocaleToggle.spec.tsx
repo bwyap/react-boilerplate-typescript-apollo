@@ -15,7 +15,7 @@ describe('<LocaleToggle />', () => {
   let store;
 
   beforeAll(() => {
-    store = configureStore({}, createBrowserHistory());
+    store = configureStore({}, createBrowserHistory()).store;
   });
 
   it('should match the snapshot', () => {
