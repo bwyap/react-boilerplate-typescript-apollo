@@ -1,9 +1,5 @@
 # React Boilerplate: Apollo & Typescript
 
-<div align="center"><strong>⚠️ WIP: This fork is currently a work in progress. Features may be missing or incomplete.</strong></div>
-
-<br/>
-
 <div align="center">
   <!-- Dependency status -->
   <a href="https://david-dm.org/bwyap/react-boilerplate-typescript-apollo">
@@ -67,6 +63,8 @@ Currently up to date with **React-Boilerplate** v3.7.0.
 
 #### New in `react-boilerplate-typescript-apollo`
 
+- [x] Storybook integration
+- [x] Persisted Redux store
 - [x] Apollo client integration
 - [x] Typescript integration
 - [x] [react-testing-library](https://github.com/kentcdodds/react-testing-library) replaces [enzyme](https://github.com/airbnb/enzyme) (by @Mensae)
@@ -74,33 +72,10 @@ Currently up to date with **React-Boilerplate** v3.7.0.
 - [x] [Commit linting](https://github.com/marionebl/commitlint) with [husky](https://github.com/typicode/husky) to enforce consistent commit message style
 - [x] Prefer [yarn](https://yarnpkg.com) by providing a `yarn.lock` file
 
----
+#### Todo
 
-### Forked from [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
-
-<div align="center"><strong>Start your next react project in seconds</strong></div>
-<div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>
-
-<br/>
-
-<div align="center">
-  <!-- Dependency Status -->
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate">
-    <img src="https://david-dm.org/react-boilerplate/react-boilerplate.svg" alt="Dependency Status" />
-  </a>
-  <!-- devDependency Status -->
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate#info=devDependencies">
-    <img src="https://david-dm.org/react-boilerplate/react-boilerplate/dev-status.svg" alt="devDependency Status" />
-  </a>
-  <!-- Build Status -->
-  <a href="https://travis-ci.org/react-boilerplate/react-boilerplate">
-    <img src="https://travis-ci.org/react-boilerplate/react-boilerplate.svg" alt="Build Status" />
-  </a>
-  <!-- Test Coverage -->
-  <a href="https://coveralls.io/r/react-boilerplate/react-boilerplate">
-    <img src="https://coveralls.io/repos/github/react-boilerplate/react-boilerplate/badge.svg" alt="Test Coverage" />
-  </a>
-</div>
+- [ ] Add Storybook stories to example app
+- [ ] Add documentation for new changes in `react-boilerplate-typescript-apollo`
 
 ---
 
@@ -163,6 +138,11 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 5.  Run `yarn clean` to delete the example app.
 
 Now you're ready to rumble!
+
+### Storybook
+
+1.  To start [Storybook](https://storybook.js.org), run `yarn storybook`.
+2.  This will start the Storybook app on [`https://localhost:9001`](https://localhost:9001).
 
 > Please note that this boilerplate is **production-ready and not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead. If you want a solid, battle-tested base to build your next product upon and have some experience with react, this is the perfect start for you.
 

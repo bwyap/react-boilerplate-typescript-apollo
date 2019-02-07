@@ -6,18 +6,24 @@
 
 import * as React from 'react';
 // import * as PropTypes from 'prop-types';
-// import styled from 'styled-components';
 import { {{ properCase name }}Props } from '../types';
+
+// // Uncomment these imports to use JSS styling
+// import withJssStyle from '@cccv/styles/withJssStyle';
+// import { styles } from '../styles';
 
 {{#if wantMessages}}
 import { FormattedMessage } from 'react-intl';
 import messages from '../messages';
 {{/if}}
 
-class {{ properCase name }} extends {{{ type }}}<{{ properCase name }}Props> {
+/**
+ * TODO: add a description
+ */
+export class {{ properCase name }} extends {{{ type }}}<{{ properCase name }}Props> {
   static propTypes = {};
 
-  render() {
+  public render = () => {
     return (
       <div>
         {{#if wantMessages}}
@@ -29,3 +35,9 @@ class {{ properCase name }} extends {{{ type }}}<{{ properCase name }}Props> {
 }
 
 export default {{ properCase name }};
+
+// // Uncomment these lines decorate with JSS styling
+// export const Decorated{{ properCase name }} = withJssStyle<{{ properCase name }}Props>(styles)({{ properCase name }});
+// Decorated{{ properCase name }}.displayName = '{{ properCase name }}';
+
+// export default Decorated{{ properCase name }};
