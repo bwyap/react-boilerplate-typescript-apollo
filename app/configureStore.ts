@@ -25,7 +25,7 @@ const {
   persistStore,
   createPersistedReducer,
 } = createPersistMiddleware({
-  key: `cccvcommunity-template-${process.env.NODE_ENV}`,
+  key: `boilerplate-${process.env.NODE_ENV}`,
   blacklist: ['router'],
 });
 

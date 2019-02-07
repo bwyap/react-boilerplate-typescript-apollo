@@ -30,7 +30,7 @@ describe('injectSaga decorator', () => {
   });
 
   beforeEach(() => {
-    store = configureStore({}, createMemoryHistory());
+    store = configureStore({}, createMemoryHistory()).store;
     injectors = {
       injectSaga: jest.fn(),
       ejectSaga: jest.fn(),
