@@ -27,7 +27,7 @@ describe('<ReposList />', () => {
     const store = configureStore(
       { app: { currentUser: 'mxstbr' } },
       createBrowserHistory(),
-    );
+    ).store;
     const repos = [
       {
         owner: {

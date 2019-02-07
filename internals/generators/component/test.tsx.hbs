@@ -20,7 +20,7 @@ import { DEFAULT_LOCALE } from '../../../i18n';
 {{/if}}
 
 describe('<{{ properCase name }} />', () => {
-  it('Expect to not log errors in console', () => {
+  it('should not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error');
 {{#if wantMessages}}
     render(
@@ -40,10 +40,8 @@ describe('<{{ properCase name }} />', () => {
 
   /**
    * Unskip this test to use it
-   *
-   * @see {@link https://jestjs.io/docs/en/api#testskipname-fn}
    */
-  it.skip('Should render and match the snapshot', () => {
+  it.skip('should render and match the snapshot', () => {
 {{#if wantMessages}}
     const {
       container: { firstChild },

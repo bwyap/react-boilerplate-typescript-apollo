@@ -1,0 +1,23 @@
+import * as React from 'react';
+import { withInfo } from '@storybook/addon-info';
+import { storiesOf } from '@storybook/react';
+import { withViewport } from '@storybook/addon-viewport';
+
+import {{ properCase name }} from '../index';
+// // Use this import if your component is decorated with JSS styling
+// import Decorated{{ properCase name }}, { {{ properCase name }} } from '../index';
+
+storiesOf('{{ properCase name }}', module)
+  .addDecorator(
+    withInfo({
+      inline: true,
+      header: false,
+      // // Uncomment these lines if your component is decorated
+      // propTables: [ {{ properCase name}} ],
+      // propTablesExclude: [ Decorated{{ properCase name}} ],
+      // excludedPropTypes: ['classes'],
+    }),
+  )
+  .add('standard', () => <{{ properCase name }} />)
+  // TODO: add more stories
+  .add('add more stories', () => null);

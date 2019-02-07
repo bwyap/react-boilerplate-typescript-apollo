@@ -9,6 +9,7 @@ module.exports = {
     '!app/global-styles.ts',
     '!app/*/*/Loadable.{ts,tsx}',
     '!app/utils/hoistNonReactStatics/*',
+    '!app/utils/throttle.ts',
     '!app/graphql/client.ts',
     '!app/env/**',
   ],

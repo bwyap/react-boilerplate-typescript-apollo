@@ -52,7 +52,7 @@ import { translationMessages } from './i18n';
 
   // Create redux store with history
   const initialState = {};
-  const store = configureStore(initialState, history);
+  const { store } = configureStore(initialState, history);
   const MOUNT_NODE = document.getElementById('app');
 
   // Create Apollo client
@@ -87,8 +87,8 @@ import { translationMessages } from './i18n';
   if (!(window as any).Intl) {
     // prettier-ignore
     const translations = [
-    'intl/locale-data/jsonp/en.js',
-  ];
+      'intl/locale-data/jsonp/en.js',
+    ];
     new Promise(resolve => {
       resolve(import('intl'));
     })

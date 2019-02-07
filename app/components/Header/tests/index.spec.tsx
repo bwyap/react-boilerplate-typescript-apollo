@@ -11,7 +11,7 @@ import configureStore from '../../../configureStore';
 
 describe('<Header />', () => {
   const history = createHistory();
-  const store = configureStore({}, history);
+  const store = configureStore({}, history).store;
 
   it('should render a div', () => {
     const { container } = render(
