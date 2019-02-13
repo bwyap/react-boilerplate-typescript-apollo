@@ -9,6 +9,7 @@ import { History } from 'history';
 import { createLogger } from 'redux-logger';
 
 import createReducer from './reducers';
+import rootSagas from './rootSagas';
 import {
   MyReduxStore,
   MyReducerState,
@@ -79,6 +80,10 @@ export default function configureStore(
   store.runSaga = sagaMiddleware.run;
   store.injectedReducers = {}; // Reducer registry
   store.injectedSagas = {}; // Saga registry
+
+  // Run root sagas
+  /* istanbul ignore next */
+  rootSagas.forEach(saga => store.runSaga(saga, undefined));
 
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */
