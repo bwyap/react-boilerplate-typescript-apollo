@@ -4,6 +4,7 @@ module.exports = {
     '!app/**/*.d.ts',
     '!app/**/*.test.{ts,tsx}',
     '!app/**/*.spec.{ts,tsx}',
+    '!app/**/*.stories.tsx',
     '!app/*/RbGen*/**/*.{ts,tsx}',
     '!app/app.tsx',
     '!app/global-styles.ts',

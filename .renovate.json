@@ -1,6 +1,0 @@
-{
-  "includeForks": true,
-  "extends": [
-    "github>bwyap/renovate-config-bwyap"
-  ]
-}
