@@ -138,7 +138,7 @@
     "@types/react-redux": "7.0.0",
     "@types/react-router-dom": "4.3.1",
     "@types/react-test-renderer": "16.0.3",
-    "@types/redux-logger": "3.0.6",
+    "@types/redux-logger": "3.0.7",
     "@types/reselect": "2.2.0",
     "@types/rimraf": "2.0.2",
     "@types/shelljs": "0.8.1",
