@@ -127,7 +127,7 @@
     "@types/ip": "1.1.0",
     "@types/jest": "23.3.14",
     "@types/jest-cli": "23.6.0",
-    "@types/lodash": "4.14.121",
+    "@types/lodash": "4.14.123",
     "@types/minimist": "1.2.0",
     "@types/prettier": "1.16.1",
     "@types/prop-types": "15.5.8",
