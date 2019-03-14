@@ -14,10 +14,7 @@ matrix:
 environment:
   matrix:
     # Node versions to run
-    - nodejs_version: 'Current'
-    # uncomment the following line to also test on LTS version (long term support)
-    # disabled to speed up because appveyor does not do concurrent builds
-    # - nodejs_version: 'LTS'
+    - nodejs_version: '10'
 
 # Fix line endings in Windows. (runs before repo cloning)
 init:
