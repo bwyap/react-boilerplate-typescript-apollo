@@ -141,7 +141,7 @@
     "@types/redux-logger": "3.0.7",
     "@types/reselect": "2.2.0",
     "@types/rimraf": "2.0.2",
-    "@types/shelljs": "0.8.1",
+    "@types/shelljs": "0.8.3",
     "@types/sinon": "7.0.5",
     "@types/storybook__react": "4.0.0",
     "@types/styled-components": "4.1.6",
