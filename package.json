@@ -67,7 +67,7 @@
     "connected-react-router": "5.0.1",
     "cross-env": "5.2.0",
     "express": "4.16.4",
-    "fontfaceobserver": "2.0.13",
+    "fontfaceobserver": "2.1.0",
     "graphql": "14.1.1",
     "history": "4.7.2",
     "immer": "1.7.4",
