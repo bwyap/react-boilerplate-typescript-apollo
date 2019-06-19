@@ -143,7 +143,7 @@
     "@types/rimraf": "2.0.2",
     "@types/shelljs": "0.8.3",
     "@types/sinon": "7.0.5",
-    "@types/storybook__react": "4.0.0",
+    "@types/storybook__react": "4.0.2",
     "@types/styled-components": "4.1.6",
     "@types/stylelint": "9.4.1",
     "@types/terser-webpack-plugin": "1.2.0",
