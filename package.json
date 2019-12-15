@@ -166,7 +166,7 @@
     "codecov": "3.1.0",
     "compare-versions": "3.4.0",
     "compression-webpack-plugin": "2.0.0",
-    "coveralls": "3.0.2",
+    "coveralls": "3.0.9",
     "css-loader": "1.0.1",
     "file-loader": "2.0.0",
     "html-loader": "0.5.5",
